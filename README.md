@@ -1,4 +1,10 @@
-# GitVitae
+# <p align="center">GitVitae</p>
+
+<p align="center">
+  <a href="https://deepwiki.com/git-vitae/git-vitae.github.io">
+    <img src="https://deepwiki.com/badge.svg" alt="Ask DeepWiki" />
+  </a>
+</p>
 
 A free, open-source portfolio template for developers and job seekers. Edit one YAML file, push to GitHub, get a live portfolio — no account needed, no hosting fees, no framework knowledge required.
 

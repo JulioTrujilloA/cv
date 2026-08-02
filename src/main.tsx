@@ -8,13 +8,13 @@ import App from './App';
 // We import per-weight AND per-subset (latin + latin-ext only) to strip out
 // Cyrillic, Vietnamese, Greek, etc. @font-face declarations that are never used
 // for a portfolio in English — this significantly reduces the CSS bundle size.
-import '@fontsource/inter/latin-300.css';
-import '@fontsource/inter/latin-400.css';
-import '@fontsource/inter/latin-ext-400.css';
-import '@fontsource/inter/latin-500.css';
-import '@fontsource/inter/latin-ext-500.css';
-import '@fontsource/inter/latin-600.css';
-import '@fontsource/inter/latin-700.css';
+import '@fontsource/work-sans/latin-300.css';
+import '@fontsource/work-sans/latin-400.css';
+import '@fontsource/work-sans/latin-ext-400.css';
+import '@fontsource/work-sans/latin-500.css';
+import '@fontsource/work-sans/latin-ext-500.css';
+import '@fontsource/work-sans/latin-600.css';
+import '@fontsource/work-sans/latin-700.css';
 
 import '@fontsource/cormorant-garamond/latin-300.css';
 import '@fontsource/cormorant-garamond/latin-300-italic.css';

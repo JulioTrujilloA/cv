@@ -3,10 +3,10 @@
   "basics": {
     "name": "Julio Trujillo Alvarado",
     "label": "Computer Engineer",
-    "image": "",
+    "image": "https://raw.githubusercontent.com/JulioTrujilloA/cv/main/public/img/avatar-logo.png",
     "email": "t.a.j@outlook.com",
     "phone": "",
-    "summary": "I like teamwork, being proactive, and analyzing problems under pressure.\nI am persistent, punctual, and personal responsibility is part of my day\nto day. I have worked in the IT sector incorporating positive skills,\nwith expectations of growth on a personal and professional level.\n",
+    "summary": "I like teamwork, being proactive, and analyzing problems under pressure. I am persistent, punctual, and personal responsibility is part of my day to day. I have worked in the IT sector incorporating positive skills, with expectations of growth on a personal and professional level.",
     "location": {
       "city": "Zapopan",
       "region": "Jalisco"
@@ -143,6 +143,14 @@
         "Project Management",
         "ITIL (knowledge)",
         "Budget Management"
+      ]
+    },
+    {
+      "name": "Government",
+      "keywords": [
+        "POTIC Management",
+        "Technical Assessments",
+        "Feasibility Studies"
       ]
     }
   ],

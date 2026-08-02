@@ -7,11 +7,7 @@ Zapopan, Jalisco, México · t.a.j@outlook.com · [Github](https://github.com/Ju
 
 ## Summary
 
-I like teamwork, being proactive, and analyzing problems under pressure.
-I am persistent, punctual, and personal responsibility is part of my day
-to day. I have worked in the IT sector incorporating positive skills,
-with expectations of growth on a personal and professional level.
-
+I like teamwork, being proactive, and analyzing problems under pressure. I am persistent, punctual, and personal responsibility is part of my day to day. I have worked in the IT sector incorporating positive skills, with expectations of growth on a personal and professional level.
 
 ## Skills
 
@@ -20,6 +16,7 @@ with expectations of growth on a personal and professional level.
 **Databases:** MySQL, SQL Server
 **Help Desk / ITSM:** Jira, Freshdesk, Mantis BT, SLAs, ITSM
 **Management:** Project Management, ITIL (knowledge), Budget Management
+**Government:** POTIC Management, Technical Assessments, Feasibility Studies
 
 ## Experience
 

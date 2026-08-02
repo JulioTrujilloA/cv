@@ -138,106 +138,111 @@ export function GitHubStats() {
           )}
         </div>
 
-        {/* Stat cards */}
-        <div className="mb-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {loading
-            ? Array.from({ length: 3 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="border-border bg-background rounded-2xl border p-8"
-                >
-                  <Skeleton className="mb-3 h-10 w-24" />
-                  <Skeleton className="h-4 w-28" />
-                </div>
-              ))
-            : stats.map(({ icon: Icon, label, value }, i) => (
-                <motion.div
-                  key={label}
-                  variants={fadeUp}
-                  custom={i + 3}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: '-60px' }}
-                  className="group border-border bg-background hover:bg-primary/5 hover:border-primary/30 rounded-2xl border p-8 transition-colors duration-300"
-                >
-                  <Icon
-                    size={18}
-                    className="text-primary mb-4 transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <div className="text-foreground mb-2 text-4xl leading-none font-bold tabular-nums md:text-5xl">
-                    <Counter value={value} />
-                  </div>
-                  <p className="text-muted-foreground text-xs font-medium tracking-widest uppercase">
-                    {label}
-                  </p>
-                </motion.div>
-              ))}
-        </div>
-
-        {/* Language breakdown */}
-        {(loading || (data && data.topLanguages.length > 0)) && (
-          <motion.div
-            variants={fadeUp}
-            custom={6}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-60px' }}
-            className="border-border bg-background rounded-2xl border p-8"
-          >
-            <p className="text-muted-foreground mb-6 font-mono text-xs font-medium tracking-widest uppercase">
-              {ui.github.topLanguages}
-            </p>
-
-            {loading ? (
-              <div className="space-y-4">
-                {Array.from({ length: 4 }).map((_, i) => (
-                  <div key={i} className="flex items-center gap-4">
-                    <Skeleton className="h-4 w-24" />
-                    <Skeleton className="h-2 flex-1 rounded-full" />
-                    <Skeleton className="h-4 w-8" />
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="space-y-4">
-                {data!.topLanguages.map(({ name, percentage }, i) => (
-                  <motion.div
-                    key={name}
-                    initial={{ opacity: 0, x: -12 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.07, duration: 0.4 }}
-                    className="flex items-center gap-4"
+        {/* Stat cards (stacked) + language breakdown, side by side */}
+        <div className="mb-6 grid grid-cols-1 gap-4 lg:grid-cols-[260px_1fr]">
+          {/* Stat cards — stacked in one compact column */}
+          <div className="flex flex-col gap-3">
+            {loading
+              ? Array.from({ length: 3 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="border-border bg-background rounded-2xl border p-4"
                   >
-                    <span
-                      className="min-w-[7rem] text-sm font-medium"
-                      style={{ color: langColor(name) }}
-                    >
-                      {name}
-                    </span>
-                    <div className="bg-secondary h-1.5 flex-1 overflow-hidden rounded-full">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${percentage}%` }}
-                        viewport={{ once: true }}
-                        transition={{
-                          delay: i * 0.07 + 0.15,
-                          duration: 0.7,
-                          ease: 'easeOut',
-                        }}
-                        className="h-full rounded-full"
-                        style={{ backgroundColor: langColor(name) }}
-                      />
+                    <Skeleton className="mb-1.5 h-7 w-16" />
+                    <Skeleton className="h-3 w-24" />
+                  </div>
+                ))
+              : stats.map(({ icon: Icon, label, value }, i) => (
+                  <motion.div
+                    key={label}
+                    variants={fadeUp}
+                    custom={i + 3}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: '-60px' }}
+                    className="group border-border bg-background hover:bg-primary/5 hover:border-primary/30 flex items-center gap-3 rounded-2xl border p-4 transition-colors duration-300"
+                  >
+                    <Icon
+                      size={16}
+                      className="text-primary shrink-0 transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="min-w-0 flex-1">
+                      <div className="text-foreground text-2xl leading-none font-bold tabular-nums">
+                        <Counter value={value} />
+                      </div>
+                      <p className="text-muted-foreground truncate text-[10px] font-medium tracking-widest uppercase">
+                        {label}
+                      </p>
                     </div>
-                    <span className="text-muted-foreground w-8 text-right text-xs tabular-nums">
-                      {percentage}%
-                    </span>
                   </motion.div>
                 ))}
-              </div>
-            )}
-          </motion.div>
-        )}
+          </div>
+
+          {/* Language breakdown */}
+          {(loading || (data && data.topLanguages.length > 0)) && (
+            <motion.div
+              variants={fadeUp}
+              custom={6}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-60px' }}
+              className="border-border bg-background rounded-2xl border p-6"
+            >
+              <p className="text-muted-foreground mb-4 font-mono text-xs font-medium tracking-widest uppercase">
+                {ui.github.topLanguages}
+              </p>
+
+              {loading ? (
+                <div className="space-y-3">
+                  {Array.from({ length: 4 }).map((_, i) => (
+                    <div key={i} className="flex items-center gap-4">
+                      <Skeleton className="h-4 w-24" />
+                      <Skeleton className="h-2 flex-1 rounded-full" />
+                      <Skeleton className="h-4 w-8" />
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="space-y-3">
+                  {data!.topLanguages.map(({ name, percentage }, i) => (
+                    <motion.div
+                      key={name}
+                      initial={{ opacity: 0, x: -12 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.07, duration: 0.4 }}
+                      className="flex items-center gap-4"
+                    >
+                      <span
+                        className="min-w-[7rem] text-sm font-medium"
+                        style={{ color: langColor(name) }}
+                      >
+                        {name}
+                      </span>
+                      <div className="bg-secondary h-1.5 flex-1 overflow-hidden rounded-full">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${percentage}%` }}
+                          viewport={{ once: true }}
+                          transition={{
+                            delay: i * 0.07 + 0.15,
+                            duration: 0.7,
+                            ease: 'easeOut',
+                          }}
+                          className="h-full rounded-full"
+                          style={{ backgroundColor: langColor(name) }}
+                        />
+                      </div>
+                      <span className="text-muted-foreground w-8 text-right text-xs tabular-nums">
+                        {percentage}%
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
+              )}
+            </motion.div>
+          )}
+        </div>
 
         {/* Rate-limit notice */}
         {error === 'rate-limited' && (

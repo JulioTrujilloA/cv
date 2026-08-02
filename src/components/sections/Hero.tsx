@@ -8,14 +8,19 @@ import { ui } from '@/lib/ui-strings';
 function Avatar() {
   if (config.avatarUrl) {
     return (
-      <img
-        src={config.avatarUrl}
-        alt={config.name}
-        className="ring-primary/30 h-28 w-28 rounded-2xl object-cover ring-2"
-        fetchPriority="high"
-        loading="eager"
-        data-testid="img-avatar"
-      />
+      <div
+        className="bg-secondary ring-primary/30 flex h-28 w-28 items-center justify-center rounded-2xl p-3 ring-2"
+        data-testid="div-avatar-frame"
+      >
+        <img
+          src={config.avatarUrl}
+          alt={config.name}
+          className="h-full w-full object-contain"
+          fetchPriority="high"
+          loading="eager"
+          data-testid="img-avatar"
+        />
+      </div>
     );
   }
   const initials = config.name

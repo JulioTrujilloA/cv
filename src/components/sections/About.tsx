@@ -1,6 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail } from 'lucide-react';
 import { config } from '@/portfolio.config';
 import { ui } from '@/lib/ui-strings';
 import { fadeUpVariants } from '@/lib/animation';
@@ -74,7 +73,7 @@ function StatCard({
       className="border-border bg-card card-hover rounded-2xl border p-6"
       data-testid={`stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}
     >
-      <p className="gradient-text mb-2 font-serif text-4xl font-light">
+      <p className="gradient-text mb-1 font-serif text-3xl font-light md:text-4xl">
         {stat.prefix ?? ''}
         {displayed}
         {stat.suffix ?? ''}
@@ -118,9 +117,9 @@ export function About() {
       className="relative overflow-hidden px-6 py-32"
     >
       <div className="mx-auto max-w-6xl">
-        <div className="grid items-center gap-16 md:grid-cols-2">
-          {/* Left col */}
-          <div>
+        <div className="flex flex-col gap-12">
+          {/* Text */}
+          <div className="max-w-3xl">
             <motion.p
               variants={fadeUp}
               custom={0}
@@ -137,11 +136,9 @@ export function About() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-80px' }}
-              className="section-heading text-foreground mb-6 text-4xl leading-tight md:text-5xl"
+              className="section-heading text-foreground mb-6 text-3xl leading-tight md:text-4xl md:whitespace-nowrap"
             >
-              {ui.about.headingLine1}
-              <br />
-              <em className="font-light not-italic">{ui.about.headingLine2}</em>
+              {ui.about.heading}
             </motion.h2>
             <motion.div
               variants={fadeUp}
@@ -165,26 +162,10 @@ export function About() {
             >
               {config.about}
             </motion.p>
-
-            {config.email && (
-              <motion.a
-                variants={fadeUp}
-                custom={4}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: '-80px' }}
-                href={`mailto:${config.email}`}
-                className="text-primary mt-6 inline-flex items-center gap-2 text-sm font-medium hover:underline"
-                data-testid="link-email"
-              >
-                <Mail size={14} />
-                {config.email}
-              </motion.a>
-            )}
           </div>
 
-          {/* Right col — animated stat cards */}
-          <div className="grid grid-cols-2 gap-4">
+          {/* Stat cards — spread across the full section width */}
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
             {stats.map((stat, i) => (
               <StatCard key={stat.label} stat={stat} delay={i + 1} />
             ))}

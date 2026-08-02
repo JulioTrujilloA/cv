@@ -22,7 +22,7 @@ name: "Julio Trujillo Alvarado"              # Your name — shown in the header
 email: "t.a.j@outlook.com"
 phone: ""                    # Vacío a propósito — este repo es público, no quieres tu número ahí. Optional — e.g. "+1 (555) 000-1234". Shown in contact section and resume.
 location: "Zapopan, Jalisco, México"
-avatarUrl: ""  # Vacío = se muestran tus iniciales como placeholder. Sube tu foto y pega la URL cuando quieras.
+avatarUrl: "https://raw.githubusercontent.com/JulioTrujilloA/cv/main/public/img/avatar-logo.png"
 # How to add a profile photo (free, no extra account needed):
 #   1. Go to your GitHub repo → click "Add file" → "Upload files"
 #   2. Upload your photo (e.g. avatar.jpg) into a folder called "public/"
@@ -96,7 +96,7 @@ content:
     title: "Computer Engineer"
     tagline: "IT support, process documentation, and project management with 10+ years of experience."
 
-    about: |
+    about: >-
       I like teamwork, being proactive, and analyzing problems under pressure.
       I am persistent, punctual, and personal responsibility is part of my day
       to day. I have worked in the IT sector incorporating positive skills,
@@ -125,6 +125,8 @@ content:
         items: [Jira, Freshdesk, "Mantis BT", SLAs, ITSM]
       - category: "Management"
         items: ["Project Management", "ITIL (knowledge)", "Budget Management"]
+      - category: "Government"
+        items: ["POTIC Management", "Technical Assessments", "Feasibility Studies"]
 
     experience:
       - company: "iCorp®"
@@ -214,7 +216,7 @@ content:
     title: "Ingeniero en Computación"
     tagline: "Soporte de TI, documentación de procesos y gestión de proyectos con más de 10 años de experiencia."
 
-    about: |
+    about: >-
       Me gusta el trabajo en equipo, ser proactivo y el análisis de problemas bajo presión.
       Soy persistente, puntual y la responsabilidad personal forma parte de mi día a día.
       He trabajado en el sector de TI incorporando aptitudes positivas, con expectativas
@@ -243,6 +245,8 @@ content:
         items: [Jira, Freshdesk, "Mantis BT", SLAs, ITSM]
       - category: "Gestión"
         items: ["Project Management", "ITIL (knowledge)", "Budget Management"]
+      - category: "Gobierno"
+        items: ["Gestión de POTIC", "Dictámenes técnicos", "Estudios de Factibilidad"]
 
     experience:
       - company: "icorp®"

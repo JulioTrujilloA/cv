@@ -44,8 +44,7 @@ const STRINGS = {
     },
     about: {
       eyebrow: 'About Me',
-      headingLine1: 'The person behind',
-      headingLine2: 'the keyboard.',
+      heading: 'The person behind the keyboard.',
       languages: 'Languages',
     },
     skills: {
@@ -210,8 +209,7 @@ const STRINGS = {
     },
     about: {
       eyebrow: 'Acerca de Mí',
-      headingLine1: 'La persona detrás',
-      headingLine2: 'del teclado.',
+      heading: 'La persona detrás del teclado.',
       languages: 'Idiomas',
     },
     skills: {

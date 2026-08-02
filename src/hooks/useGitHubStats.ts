@@ -1,12 +1,25 @@
 import { useState, useEffect } from 'react';
 
+export interface GitHubProject {
+  name: string;
+  description: string;
+  url: string;
+  homepage: string;
+  language: string | null;
+}
+
 export interface GitHubStats {
   followers: number;
   publicRepos: number;
   totalStars: number;
   topLanguages: { name: string; count: number; percentage: number }[];
+  recentProjects: GitHubProject[];
   profileUrl: string;
 }
+
+// Repos to leave out of "recent projects" even if they're the most recently
+// pushed — this portfolio site itself isn't a project to showcase on itself.
+const EXCLUDED_REPOS = new Set(['cv']);
 
 function extractUsername(url: string): string | null {
   const match = url.match(/github\.com\/([^/?#\s]+)/);
@@ -51,13 +64,29 @@ export function useGitHubStats(githubUrl: string) {
 
       const user = await userRes.json();
       const repos: {
+        name: string;
+        description: string | null;
+        html_url: string;
+        homepage: string | null;
         stargazers_count: number;
         language: string | null;
         fork: boolean;
       }[] = reposRes.ok ? await reposRes.json() : [];
 
+      // API already sorts by pushed date (most recent first).
       const ownRepos = repos.filter((r) => !r.fork);
       const totalStars = ownRepos.reduce((n, r) => n + r.stargazers_count, 0);
+
+      const recentProjects: GitHubProject[] = ownRepos
+        .filter((r) => !EXCLUDED_REPOS.has(r.name.toLowerCase()))
+        .slice(0, 3)
+        .map((r) => ({
+          name: r.name,
+          description: r.description ?? '',
+          url: r.html_url,
+          homepage: r.homepage ?? '',
+          language: r.language,
+        }));
 
       const langMap: Record<string, number> = {};
       for (const r of ownRepos) {
@@ -79,6 +108,7 @@ export function useGitHubStats(githubUrl: string) {
           publicRepos: user.public_repos,
           totalStars,
           topLanguages,
+          recentProjects,
           profileUrl: `https://github.com/${username}`,
         });
       }

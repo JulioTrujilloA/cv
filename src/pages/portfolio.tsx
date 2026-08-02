@@ -18,6 +18,7 @@ import { Contact } from '@/components/sections/Contact';
 import { config } from '@/portfolio.config';
 import type { SectionId } from '@/portfolio.config';
 import { ui } from '@/lib/ui-strings';
+import { useGitHubStats } from '@/hooks/useGitHubStats';
 
 interface PortfolioPageProps {
   theme: string;
@@ -119,6 +120,12 @@ export function PortfolioPage({
   onToggleTheme,
   topOffset,
 }: PortfolioPageProps) {
+  // Fetched once here and shared with both GitHubStats and Projects — each
+  // used to run its own fetch, which meant every page load hit the GitHub
+  // API twice and burned through the unauthenticated rate limit twice as
+  // fast for no reason.
+  const github = useGitHubStats(config.social.github ?? '');
+
   return (
     <div className="bg-background text-foreground min-h-screen">
       <Navbar
@@ -127,10 +134,17 @@ export function PortfolioPage({
         topOffset={topOffset}
       />
       <Hero />
-      <GitHubStats />
+      <GitHubStats {...github} />
       {config.sections
         .filter((s) => s.show)
         .map(({ id }) => {
+          if (id === 'projects') {
+            return (
+              <SectionWrapper key={id} id={id}>
+                <Projects {...github} />
+              </SectionWrapper>
+            );
+          }
           const Section = SECTION_COMPONENTS[id];
           if (!Section) return null;
           return (

@@ -5,7 +5,7 @@ import { FaGithub } from 'react-icons/fa6';
 import { config } from '@/portfolio.config';
 import { ui } from '@/lib/ui-strings';
 import { fadeUpVariants } from '@/lib/animation';
-import { useGitHubStats } from '@/hooks/useGitHubStats';
+import type { useGitHubStats } from '@/hooks/useGitHubStats';
 
 const fadeUp = fadeUpVariants(40, 0.7, 0.1);
 
@@ -75,9 +75,12 @@ function Skeleton({ className }: { className?: string }) {
 
 // ── Section ────────────────────────────────────────────────────────────────────
 
-export function GitHubStats() {
+export function GitHubStats({
+  data,
+  loading,
+  error,
+}: ReturnType<typeof useGitHubStats>) {
   const githubUrl = (config.social as Record<string, string>)?.github ?? '';
-  const { data, loading, error } = useGitHubStats(githubUrl);
 
   if (!githubUrl || githubUrl.includes('yourusername')) return null;
   if (error === 'not-found') return null;

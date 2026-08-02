@@ -55,6 +55,13 @@ const STRINGS = {
       eyebrow: 'Career',
       heading: 'Work Experience',
     },
+    projects: {
+      eyebrow: 'From GitHub',
+      heading: 'Recent Projects',
+      repoAria: 'View repo on GitHub',
+      liveAria: 'View live project',
+      noDescription: 'No description yet.',
+    },
     education: {
       eyebrow: 'Education',
       heading: 'Academic Background',
@@ -203,30 +210,37 @@ const STRINGS = {
     },
     hero: {
       openToOpportunities: 'Disponible para nuevas oportunidades',
-      viewWork: 'Ver Mi Trabajo',
+      viewWork: 'Ver mi trabajo',
       viewResume: 'Ver CV',
       scrollAria: 'Bajar',
     },
     about: {
-      eyebrow: 'Acerca de Mí',
+      eyebrow: 'Acerca de mí',
       heading: 'La persona detrás del teclado.',
       languages: 'Idiomas',
     },
     skills: {
       eyebrow: 'Caja de herramientas',
-      heading: 'Habilidades y Tecnologías',
+      heading: 'Habilidades y tecnologías',
     },
     experience: {
       eyebrow: 'Trayectoria',
-      heading: 'Experiencia Laboral',
+      heading: 'Experiencia laboral',
+    },
+    projects: {
+      eyebrow: 'Desde GitHub',
+      heading: 'Proyectos recientes',
+      repoAria: 'Ver repositorio en GitHub',
+      liveAria: 'Ver proyecto en vivo',
+      noDescription: 'Sin descripción todavía.',
     },
     education: {
       eyebrow: 'Educación',
-      heading: 'Formación Académica',
+      heading: 'Formación académica',
     },
     certifications: {
       eyebrow: 'Certificaciones',
-      heading: 'Credenciales e Insignias',
+      heading: 'Credenciales e insignias',
       verify: 'Verificar',
     },
     languages: {
@@ -235,7 +249,7 @@ const STRINGS = {
     },
     stats: {
       eyebrow: 'En números',
-      heading: 'De un Vistazo',
+      heading: 'De un vistazo',
     },
     level: {
       native: 'Nativo',
@@ -266,7 +280,7 @@ const STRINGS = {
       description:
         'Disponible para nuevas oportunidades. Si tienes un puesto en mente o solo quieres conectar — mi bandeja de entrada siempre está abierta.',
       nameLabel: 'Tu nombre',
-      namePlaceholder: 'Tu Nombre',
+      namePlaceholder: 'Tu nombre',
       emailLabel: 'Tu correo',
       emailPlaceholder: 'Tu correo',
       messageLabel: 'Mensaje',
@@ -279,7 +293,7 @@ const STRINGS = {
       mailtoHint: 'Abre tu cliente de correo con el mensaje prellenado.',
       mailtoLink: 'O escribe directo →',
       downloadResume: 'Descargar CV',
-      sharePortfolio: 'Compartir Portafolio',
+      sharePortfolio: 'Compartir portafolio',
       builtWith: 'Hecho con',
       forkIt: '— haz tu propio fork.',
       whatsNew: 'Novedades en v1.3',
@@ -302,7 +316,7 @@ const STRINGS = {
     },
     resumePage: {
       backToPortfolio: 'Portafolio',
-      twoColumn: 'Dos Columnas',
+      twoColumn: 'Dos columnas',
       classic: 'Clásico',
       twoColumnAria: 'Diseño de dos columnas',
       classicAria: 'Diseño clásico',

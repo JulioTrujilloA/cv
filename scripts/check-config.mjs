@@ -231,7 +231,7 @@ if (exp.length === 0) warn("experience", "No positions — Experience section wi
 else pass("experience", `${exp.length} position${exp.length !== 1 ? "s" : ""}`);
 
 const projects = cfg.projects || [];
-if (projects.length === 0) warn("projects", "No entries — Projects section will be empty");
+if (projects.length === 0) pass("projects", "0 (filled live from GitHub — see useGitHubStats.ts)");
 else {
   const featured = projects.filter((p) => p.featured).length;
   pass("projects", `${projects.length} total · ${featured} featured`);

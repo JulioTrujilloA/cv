@@ -71,7 +71,7 @@ sections:
   - { id: skills,         show: true  }
   - { id: languages,      show: true  }
   - { id: experience,     show: true  }
-  - { id: projects,       show: false }  # Sin proyectos personales en el CV todavía — actívalo si agregamos alguno
+  - { id: projects,       show: true  }  # Muestra tus 3 repos más recientes de GitHub en vivo (ver más abajo)
   - { id: education,      show: true  }
   - { id: certifications, show: true  }
   - { id: publications,   show: false }
@@ -250,7 +250,7 @@ content:
 
     experience:
       - company: "icorp®"
-        role: "Coordinador de Soporte en Sitio"
+        role: "Coordinador de soporte en sitio"
         period: "Mayo 2022 – Febrero 2026"
         description: |
           Brindé soporte en sitio para el departamento de TI de una compañía del
@@ -261,7 +261,7 @@ content:
           - Capacitación y gestión documental (SharePoint)
 
       - company: "CONAFOR®"
-        role: "Documentador Técnico"
+        role: "Documentador técnico"
         period: "Mayo 2019 – Mayo 2022"
         description: |
           Documenté contrataciones de TIC y coordiné estudios de factibilidad
@@ -272,7 +272,7 @@ content:
           - Adopción de repositorios de trabajo unificados
 
       - company: "Axtel®"
-        role: "Analista de Sistemas"
+        role: "Analista de sistemas"
         period: "Septiembre 2018 – Marzo 2019"
         description: |
           Di servicio al cliente interno de CONAFOR, continuando el desarrollo
@@ -296,7 +296,7 @@ content:
           - Testing funcional y pruebas de aceptación
 
       - company: "CONTPAQi®"
-        role: "SLA y Desarrollo de Software"
+        role: "SLA y desarrollo de software"
         period: "Diciembre 2015 – Octubre 2016"
         description: |
           SLA de Nivel 3 para el Sistema de Nóminas, resolviendo errores en SQL
@@ -331,10 +331,10 @@ content:
         tags: [Java, Backend]
 
 # ── Projects ───────────────────────────────────────────────────────────
-# Set featured: true to show in the Featured section (max 3 recommended)
-# Vacío por ahora — no había proyectos personales en tu CV. Si quieres mostrar
-# alguno de tus repos (dev-hub, bolsillo, mi-dinero, barber-app...), dime y
-# lo agrego aquí (y activa `projects` de nuevo en la lista `sections` abajo).
+# Este campo ya NO se usa — la sección de Proyectos ahora se llena en vivo
+# con tus 3 repos públicos más recientes de GitHub (por fecha de push),
+# excluyendo forks y el repo de este mismo portafolio. Ver
+# src/hooks/useGitHubStats.ts si algún día quieres cambiar esa lógica.
 projects: []
 
 

@@ -13,7 +13,7 @@
 # ║  Change it to "portfolio" once you have filled in your details.      ║
 # ╚══════════════════════════════════════════════════════════════════════╝
 siteMode: "portfolio"   # ← CHANGE THIS to "portfolio"
-siteUrl:  "https://juliotrujilloa.github.io/cv"  # ← Your GitHub Pages URL (used for RSS & canonical links)
+siteUrl:  "https://cv.jutrual.com"  # ← Custom domain on GitHub Pages (used for RSS & canonical links)
 showPoweredBy: false  # Set to true to show a small "Made with GitVitae" badge in your footer (helps others discover GitVitae)
 
 # ── Identity ───────────────────────────────────────────── (required) ──

@@ -30,7 +30,7 @@ export function OpenToWorkBanner({
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -48, opacity: 0 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          style={{ top: topOffset }}
+          style={{ top: `${topOffset}rem` }}
           className="bg-primary text-primary-foreground fixed right-0 left-0 z-[60] flex h-10 items-center justify-center gap-3 px-4 text-xs font-medium tracking-wide select-none print:hidden"
         >
           <span className="relative flex shrink-0 items-center">

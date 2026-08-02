@@ -119,9 +119,9 @@ export function Navbar({ theme, onToggleTheme, topOffset }: NavbarProps) {
   return (
     <nav
       data-testid="navbar"
-      style={{ top: `${topOffset}px` }}
+      style={{ top: `${topOffset}rem` }}
       className={`fixed right-0 left-0 z-50 transition-all duration-500 ${
-        scrolled
+        scrolled || topOffset > 0
           ? 'bg-background/85 border-border/60 border-b shadow-sm backdrop-blur-lg'
           : 'bg-transparent'
       }`}

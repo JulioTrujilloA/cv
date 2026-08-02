@@ -43,8 +43,11 @@ function PortfolioWithChrome({
   );
   const [openToWorkVisible, setOpenToWorkVisible] = useState(config.openToWork);
 
-  const demoBannerHeight = demoBannerVisible ? 40 : 0;
-  const totalTopOffset = demoBannerHeight + (openToWorkVisible ? 40 : 0);
+  // Offsets in rem, not px: the banners are h-10 (2.5rem), which scales with
+  // the browser's root font-size. A px offset here desyncs from the rendered
+  // banner height whenever that base isn't 16px, leaving a visible gap.
+  const demoBannerHeight = demoBannerVisible ? 2.5 : 0;
+  const totalTopOffset = demoBannerHeight + (openToWorkVisible ? 2.5 : 0);
 
   return (
     <SmoothScrollProvider>
@@ -56,7 +59,7 @@ function PortfolioWithChrome({
       />
       <div
         className="transition-[padding] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
-        style={{ paddingTop: `${totalTopOffset}px` }}
+        style={{ paddingTop: `${totalTopOffset}rem` }}
       >
         <PortfolioPage
           theme={theme}

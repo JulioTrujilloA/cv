@@ -12,8 +12,8 @@
 # ║                                                                      ║
 # ║  Change it to "portfolio" once you have filled in your details.      ║
 # ╚══════════════════════════════════════════════════════════════════════╝
-siteMode: "landing"   # ← CHANGE THIS to "portfolio"
-siteUrl:  "https://yourusername.github.io"  # ← Your GitHub Pages URL (used for RSS & canonical links)
+siteMode: "portfolio"   # ← CHANGE THIS to "portfolio"
+siteUrl:  "https://juliotrujilloa.github.io/cv"  # ← Your GitHub Pages URL (used for RSS & canonical links)
 showPoweredBy: false  # Set to true to show a small "Made with GitVitae" badge in your footer (helps others discover GitVitae)
 
 # ── Identity ───────────────────────────────────────────── (required) ──
@@ -50,15 +50,15 @@ openToWork: true         # Shows "Open to Opportunities" banner when true
 
 # ── Theme ──────────────────────────────────────────────────────────────
 defaultTheme: "system"   # Options: light | dark | system
-colorPreset: "indigo"    # Options: indigo | emerald | rose | amber | ocean | slate | custom
-# primaryColor: "#6366f1" # Optional — pick any colour you like and paste its hex code here.
+colorPreset: "custom"    # Options: indigo | emerald | rose | amber | ocean | slate | custom
+primaryColor: "#212121" # Optional — pick any colour you like and paste its hex code here.
                            # Overrides colorPreset above. To find a hex code:
                            #   → Google "colour picker", pick a colour, copy the 6-digit code (e.g. #e11d48)
                            #   → or grab one from coolors.co / your favourite site's colour
 
 resumeTheme:
-  twoColumn: "indigo"    # Accent color for the two-column resume layout
-  classic: "emerald"     # Accent color for the classic resume layout
+  twoColumn: "custom"    # Accent color for the two-column resume layout
+  classic: "custom"     # Accent color for the classic resume layout
 
 contactFormEndpoint: ""  # Optional — paste a Formspree URL (https://formspree.io/f/xxxx)
                            # or any POST endpoint that accepts {name, email, message}.

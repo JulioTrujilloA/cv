@@ -14,14 +14,22 @@ if (rawPort && (Number.isNaN(port) || port <= 0)) {
   throw new Error(`Invalid PORT value: "${rawPort}"`);
 }
 
-const portfolioConfig = jsYaml.load(
+const rawPortfolioConfig = jsYaml.load(
   readFileSync(new URL("./portfolio.config.yaml", import.meta.url), "utf8")
 ) as {
-  name?: string; title?: string; about?: string; email?: string;
+  name?: string; email?: string;
   location?: string; avatarUrl?: string; openToWork?: boolean;
   social?: Record<string, string>;
   siteUrl?: string;
   blog?: { enabled?: boolean; title?: string; description?: string };
+  content?: { en?: { title?: string; about?: string }; es?: { title?: string; about?: string } };
+};
+// Bilingual content lives under content.en / content.es — meta tags/RSS are
+// generated once at build time (Node context, no access to the visitor's
+// language choice), so they always use the default language (en).
+const portfolioConfig = {
+  ...rawPortfolioConfig,
+  ...(rawPortfolioConfig.content?.en ?? rawPortfolioConfig.content?.es ?? {}),
 };
 const assetBase = "./";
 

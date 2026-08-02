@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { config } from '@/portfolio.config';
+import { ui } from '@/lib/ui-strings';
 import { fadeUpVariants } from '@/lib/animation';
 
 const fadeUp = fadeUpVariants(40, 0.7, 0.1);
@@ -16,7 +17,7 @@ export function Skills() {
           viewport={{ once: true, margin: '-80px' }}
           className="text-primary mb-4 font-mono text-xs font-medium tracking-widest uppercase"
         >
-          Toolbox
+          {ui.skills.eyebrow}
         </motion.p>
         <motion.h2
           variants={fadeUp}
@@ -26,7 +27,7 @@ export function Skills() {
           viewport={{ once: true, margin: '-80px' }}
           className="section-heading text-foreground mb-14 text-4xl md:text-5xl"
         >
-          Skills &amp; Technologies
+          {ui.skills.heading}
         </motion.h2>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { Star, Users, BookOpen, ExternalLink } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa6';
 import { config } from '@/portfolio.config';
+import { ui } from '@/lib/ui-strings';
 import { fadeUpVariants } from '@/lib/animation';
 import { useGitHubStats } from '@/hooks/useGitHubStats';
 
@@ -83,9 +84,13 @@ export function GitHubStats() {
 
   const stats = data
     ? [
-        { icon: Star, label: 'Stars earned', value: data.totalStars },
-        { icon: Users, label: 'Followers', value: data.followers },
-        { icon: BookOpen, label: 'Public repos', value: data.publicRepos },
+        { icon: Star, label: ui.github.starsEarned, value: data.totalStars },
+        { icon: Users, label: ui.github.followers, value: data.followers },
+        {
+          icon: BookOpen,
+          label: ui.github.publicRepos,
+          value: data.publicRepos,
+        },
       ]
     : [];
 
@@ -101,7 +106,7 @@ export function GitHubStats() {
           viewport={{ once: true, margin: '-80px' }}
           className="text-primary mb-4 font-mono text-xs font-medium tracking-widest uppercase"
         >
-          Open source
+          {ui.github.eyebrow}
         </motion.p>
         <div className="mb-14 flex flex-wrap items-start justify-between gap-4">
           <motion.h2
@@ -112,7 +117,7 @@ export function GitHubStats() {
             viewport={{ once: true, margin: '-80px' }}
             className="section-heading text-foreground text-4xl md:text-5xl"
           >
-            GitHub Activity
+            {ui.github.heading}
           </motion.h2>
           {data && (
             <motion.a
@@ -127,7 +132,7 @@ export function GitHubStats() {
               className="text-muted-foreground hover:text-primary inline-flex items-center gap-2 text-sm font-medium transition-colors"
             >
               <FaGithub size={16} />
-              View profile
+              {ui.github.viewProfile}
               <ExternalLink size={12} />
             </motion.a>
           )}
@@ -180,7 +185,7 @@ export function GitHubStats() {
             className="border-border bg-background rounded-2xl border p-8"
           >
             <p className="text-muted-foreground mb-6 font-mono text-xs font-medium tracking-widest uppercase">
-              Top languages
+              {ui.github.topLanguages}
             </p>
 
             {loading ? (
@@ -237,7 +242,7 @@ export function GitHubStats() {
         {/* Rate-limit notice */}
         {error === 'rate-limited' && (
           <p className="text-muted-foreground mt-6 text-center text-sm">
-            GitHub API rate limit reached — stats will appear on next load.
+            {ui.github.rateLimited}
           </p>
         )}
       </div>

@@ -17,6 +17,7 @@ import { Testimonials } from '@/components/sections/Testimonials';
 import { Contact } from '@/components/sections/Contact';
 import { config } from '@/portfolio.config';
 import type { SectionId } from '@/portfolio.config';
+import { ui } from '@/lib/ui-strings';
 
 interface PortfolioPageProps {
   theme: string;
@@ -89,7 +90,7 @@ function SectionWrapper({
                 className="flex items-center gap-1.5 text-green-500"
               >
                 <Check size={11} strokeWidth={2.5} />
-                Copied!
+                {ui.common.copied}
               </motion.span>
             ) : (
               <motion.span
@@ -101,7 +102,7 @@ function SectionWrapper({
                 className="flex items-center gap-1.5"
               >
                 <Link2 size={11} />
-                Copy link
+                {ui.common.copyLink}
               </motion.span>
             )}
           </AnimatePresence>

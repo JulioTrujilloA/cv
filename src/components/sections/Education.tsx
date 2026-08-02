@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { GraduationCap } from 'lucide-react';
 import { config } from '@/portfolio.config';
+import { ui } from '@/lib/ui-strings';
 import { fadeUpVariants } from '@/lib/animation';
 
 const fadeUp = fadeUpVariants(36, 0.7, 0.12);
@@ -19,7 +20,7 @@ export function Education() {
           viewport={{ once: true, margin: '-80px' }}
           className="text-primary mb-4 font-mono text-xs font-medium tracking-widest uppercase"
         >
-          Education
+          {ui.education.eyebrow}
         </motion.p>
         <motion.h2
           variants={fadeUp}
@@ -29,7 +30,7 @@ export function Education() {
           viewport={{ once: true, margin: '-80px' }}
           className="section-heading text-foreground mb-10 text-4xl md:text-5xl"
         >
-          Academic Background
+          {ui.education.heading}
         </motion.h2>
 
         <div className="flex flex-col gap-4">

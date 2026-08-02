@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { X, Mail } from 'lucide-react';
 import { config } from '@/portfolio.config';
+import { ui } from '@/lib/ui-strings';
 
 interface OpenToWorkBannerProps {
   onDismiss: () => void;
@@ -38,26 +39,26 @@ export function OpenToWorkBanner({
           </span>
 
           <span className="text-[11px] font-semibold tracking-widest uppercase">
-            Open to opportunities
+            {ui.openToWork.badge}
           </span>
 
           <span className="text-primary-foreground/50 hidden sm:inline">·</span>
 
           <span className="text-primary-foreground/75 hidden text-[11px] sm:inline">
-            Available for full-time roles &amp; freelance projects
+            {ui.openToWork.subtitle}
           </span>
 
           <a
-            href={`mailto:${config.email}?subject=Opportunity for ${config.name}`}
+            href={`mailto:${config.email}?subject=${encodeURIComponent(ui.openToWork.mailSubject(config.name))}`}
             className="bg-primary-foreground/15 hover:bg-primary-foreground/25 border-primary-foreground/20 ml-1 flex items-center gap-1.5 rounded-full border px-3 py-1 text-[11px] font-semibold tracking-widest whitespace-nowrap uppercase transition-colors"
           >
             <Mail size={11} />
-            Get in touch
+            {ui.openToWork.cta}
           </a>
 
           <button
             onClick={handleDismiss}
-            aria-label="Dismiss banner"
+            aria-label={ui.openToWork.dismissAria}
             className="hover:bg-primary-foreground/15 text-primary-foreground/60 hover:text-primary-foreground absolute right-3 rounded-full p-1.5 transition-colors"
           >
             <X size={13} />

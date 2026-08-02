@@ -8,6 +8,7 @@ import {
 import { Copy, CheckCircle, Download, Mail, QrCode, Link2 } from 'lucide-react';
 import { FaLinkedin, FaXTwitter } from 'react-icons/fa6';
 import { config } from '@/portfolio.config';
+import { ui } from '@/lib/ui-strings';
 import QRCodeLib from 'qrcode';
 
 interface ShareModalProps {
@@ -18,7 +19,7 @@ interface ShareModalProps {
 function CopyButton({
   text,
   label,
-  copiedLabel = 'Copied!',
+  copiedLabel = ui.share.copied,
   compact = false,
 }: {
   text: string;
@@ -88,8 +89,8 @@ export function ShareModal({ open, onClose }: ShareModalProps) {
   };
 
   const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(portfolioUrl)}`;
-  const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Check out my portfolio 👋`)}&url=${encodeURIComponent(portfolioUrl)}`;
-  const emailUrl = `mailto:?subject=${encodeURIComponent(`${config.name}'s Portfolio`)}&body=${encodeURIComponent(`Hi,\n\nCheck out my portfolio:\n${portfolioUrl}`)}`;
+  const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(ui.share.tweetText)}&url=${encodeURIComponent(portfolioUrl)}`;
+  const emailUrl = `mailto:?subject=${encodeURIComponent(ui.share.emailSubject(config.name))}&body=${encodeURIComponent(ui.share.emailBody(portfolioUrl))}`;
 
   const emailSignature = [
     `<table cellpadding="0" cellspacing="0" style="font-family:Arial,sans-serif;font-size:14px;color:#333333;">`,
@@ -111,7 +112,7 @@ export function ShareModal({ open, onClose }: ShareModalProps) {
       <DialogContent className="max-h-[85vh] max-w-md overflow-hidden">
         <DialogHeader>
           <DialogTitle className="text-base font-medium">
-            Share your portfolio
+            {ui.share.title}
           </DialogTitle>
         </DialogHeader>
 
@@ -119,7 +120,7 @@ export function ShareModal({ open, onClose }: ShareModalProps) {
           {/* ── Portfolio link ─────────────────────────── */}
           <div>
             <p className="text-muted-foreground mb-2 flex items-center gap-1.5 font-mono text-xs tracking-widest uppercase">
-              <Link2 size={11} /> Portfolio link
+              <Link2 size={11} /> {ui.share.portfolioLink}
             </p>
             <div className="bg-secondary border-border flex items-center gap-2 rounded-xl border px-3 py-2.5">
               <span className="text-foreground flex-1 truncate font-mono text-xs">
@@ -128,7 +129,7 @@ export function ShareModal({ open, onClose }: ShareModalProps) {
               <button
                 onClick={handleCopyLink}
                 className="hover:bg-background flex-shrink-0 rounded-lg p-1.5 transition-colors"
-                aria-label="Copy link"
+                aria-label={ui.share.copyLinkAria}
               >
                 {copyLinkDone ? (
                   <CheckCircle size={14} className="text-green-500" />
@@ -142,7 +143,7 @@ export function ShareModal({ open, onClose }: ShareModalProps) {
           {/* ── Social share ───────────────────────────── */}
           <div>
             <p className="text-muted-foreground mb-2 font-mono text-xs tracking-widest uppercase">
-              Share on
+              {ui.share.shareOn}
             </p>
             <div className="flex flex-wrap gap-2">
               <a
@@ -165,7 +166,7 @@ export function ShareModal({ open, onClose }: ShareModalProps) {
                 href={emailUrl}
                 className="border-border hover:bg-secondary hover:border-primary/40 flex items-center gap-1.5 rounded-xl border px-3.5 py-2 text-xs font-medium transition-all"
               >
-                <Mail size={13} /> Email
+                <Mail size={13} /> {ui.share.email}
               </a>
             </div>
           </div>
@@ -173,7 +174,7 @@ export function ShareModal({ open, onClose }: ShareModalProps) {
           {/* ── QR Code ────────────────────────────────── */}
           <div>
             <p className="text-muted-foreground mb-2 flex items-center gap-1.5 font-mono text-xs tracking-widest uppercase">
-              <QrCode size={11} /> QR code
+              <QrCode size={11} /> {ui.share.qrCode}
             </p>
             <div className="bg-secondary border-border flex items-center gap-4 rounded-xl border p-3">
               {qrDataUrl ? (
@@ -187,15 +188,14 @@ export function ShareModal({ open, onClose }: ShareModalProps) {
               )}
               <div className="flex flex-col gap-2">
                 <p className="text-muted-foreground text-xs leading-relaxed">
-                  Put this on your business card, LinkedIn banner, or conference
-                  badge.
+                  {ui.share.qrHint}
                 </p>
                 <button
                   onClick={downloadQR}
                   disabled={!qrDataUrl}
                   className="border-border hover:bg-background hover:border-primary/40 flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition-all disabled:opacity-40"
                 >
-                  <Download size={12} /> Download PNG
+                  <Download size={12} /> {ui.share.downloadPng}
                 </button>
               </div>
             </div>
@@ -203,7 +203,7 @@ export function ShareModal({ open, onClose }: ShareModalProps) {
 
           <div>
             <p className="text-muted-foreground mb-2 flex items-center gap-1.5 font-mono text-xs tracking-widest uppercase">
-              <Mail size={11} /> Email signature
+              <Mail size={11} /> {ui.share.emailSignature}
             </p>
             <div className="bg-secondary border-border rounded-xl border p-3">
               <div className="bg-background border-border/60 mb-2.5 rounded-lg border p-2.5 text-xs">
@@ -222,7 +222,7 @@ export function ShareModal({ open, onClose }: ShareModalProps) {
                   🌐 Portfolio
                 </a>
               </div>
-              <CopyButton text={emailSignature} label="Copy HTML" />
+              <CopyButton text={emailSignature} label={ui.share.copyHtml} />
             </div>
           </div>
         </div>

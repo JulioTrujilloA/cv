@@ -1,92 +1,101 @@
-# Git Vitae
-**Portfolio-Resume Engineer**
+# Julio Trujillo Alvarado
+**Computer Engineer**
 
-San Francisco, CA · git-vitae@proton.me · [Github](https://github.com/yourusername) · [Linkedin](https://linkedin.com/in/yourusername)
+Zapopan, Jalisco, México · t.a.j@outlook.com · [Github](https://github.com/JulioTrujilloA) · [Linkedin](https://linkedin.com/in/juliotrujilloalvarado)
 
 > **Open to new opportunities**
 
 ## Summary
 
-I'm a full-stack engineer with 5+ years of experience building products
-that people love. I specialize in React, Node.js, and distributed systems.
-When I'm not coding, I'm hiking trails or experimenting with new coffee
-brewing methods.
+I like teamwork, being proactive, and analyzing problems under pressure.
+I am persistent, punctual, and personal responsibility is part of my day
+to day. I have worked in the IT sector incorporating positive skills,
+with expectations of growth on a personal and professional level.
 
 
 ## Skills
 
-**Frontend:** React, TypeScript, Next.js, Tailwind CSS, Framer Motion
-**Backend:** Node.js, Express, PostgreSQL, Redis, GraphQL
-**DevOps:** Docker, AWS, CI/CD, Kubernetes, Terraform
-**Tools:** Git, Figma, Jest, Storybook, Datadog
+**Backend:** Java, PHP, Delphi, CodeIgniter
+**Frontend:** HTML & CSS, JavaScript, jQuery
+**Databases:** MySQL, SQL Server
+**Help Desk / ITSM:** Jira, Freshdesk, Mantis BT, SLAs, ITSM
+**Management:** Project Management, ITIL (knowledge), Budget Management
 
 ## Experience
 
-### Senior Full-Stack Engineer — Acme Corp
-_2022 – Present_
+### On-Site Support Coordinator — iCorp®
+_May 2022 – February 2026_
 
-Led migration of monolithic Rails app to microservices.
-Reduced p99 latency by 60%. Mentored a team of 4 engineers.
-
-
-- Microservices migration
-- 60% latency reduction
-- Team leadership
-
-### Software Engineer — Startup XYZ
-_2020 – 2022_
-
-Built real-time collaboration features for a SaaS platform serving
-50k users. Owned the entire frontend from scratch.
+Provided on-site support for the IT department of an
+agriculture-oriented company, documenting processes and
+supporting PMO projects.
 
 
-- Real-time collaboration
-- 50k users
-- Frontend ownership
+- Documented IT procedures and processes
+- Set up reports and dashboards in Jira
+- Training and document management (SharePoint)
 
-### Web Developer — Freelance
-_2018 – 2020_
+### Technical Documenter — CONAFOR®
+_May 2019 – May 2022_
 
-Delivered 20+ web projects for small businesses and agencies across
-e-commerce, marketing, and internal tools.
+Documented ICT contracting and coordinated Feasibility Studies
+before the specialized government function, in line with
+MAAGTICSI.
 
 
-- 20+ projects
-- E-commerce
-- Internal tools
+- ICT contracting management (MAAGTICSI)
+- Coordinated Feasibility Studies
+- Drove adoption of unified work repositories
+
+### Systems Analyst — Axtel®
+_September 2018 – March 2019_
+
+Served CONAFOR's internal customer, continuing development of
+the Time Clock System in CodeIgniter and maintaining legacy
+systems.
+
+
+- Development in CodeIgniter
+- Code and version control with Git
+- MySQL and SQL Server troubleshooting
+
+### Consultant — Netwarmonitor®
+_January 2017 – June 2018_
+
+Trained and implemented administrative software (point of sale)
+for clients, and coordinated delivery of INADEM government
+benefits.
+
+
+- Remote (AnyDesk) and on-site training
+- Help desk with Mantislog and Freshdesk
+- Functional and acceptance testing
+
+### SLA & Software Development — CONTPAQi®
+_December 2015 – October 2016_
+
+Level 3 SLA for the Payroll System, resolving SQL Server and
+Delphi errors, with incident tracking in OTRS.
+
+
+- Level 3 SLA support
+- Delphi development and maintenance (Visual Studio + TFS)
+- Functional and acceptance testing
 
 ## Projects
 
-### [OpenDesk](https://opendesk.example.com)
-An open-source project management tool built with React and Go. 2.3k GitHub stars. Real-time updates via WebSockets.
 
-**Tags:** React, Go, WebSockets, PostgreSQL
-
-### [CodeLens](https://github.com/yourusername/codelens)
-VS Code extension that uses AI to generate inline documentation. 10k+ installs from the marketplace.
-
-**Tags:** TypeScript, OpenAI, VS Code API
-
-### [PriceWatch](https://pricewatch.example.com)
-Browser extension that tracks price history on e-commerce sites and alerts users to drops.
-
-**Tags:** JavaScript, Chrome API, Node.js
-
-### [Logbook](https://github.com/yourusername/logbook)
-A minimalist journaling app with end-to-end encryption. Built in a weekend. 500+ users.
-
-**Tags:** React Native, SQLite, Crypto
 
 ## Education
 
-**B.S. Computer Science** — University of California, Berkeley _(2014 – 2018)_
+**MSc in IT Management** — Tecmillenio, Mexico _(August 2020 – September 2022)_
+**Bachelor of Science in Computer Engineering** — University of Guadalajara _(August 2010 – December 2014)_
 
 ## Certifications
 
-- **AWS Certified Solutions Architect – Associate** — Amazon Web Services, 2023 ([verify](https://aws.amazon.com/verification))
-- **Professional Scrum Master I** — Scrum.org, 2022 ([verify](https://www.scrum.org/certificates))
-- **Google Professional Data Engineer** — Google Cloud, 2021
+- **Oracle Certified Java Programmer 6** — Develop Talent & Technology, 2015
+- **Java Backend Development Training** — Generation México, 2018
 
 ## Languages
 
-English (Native), Spanish (Conversational), Mandarin (Basic)
+Spanish (Native), English (Conversational)

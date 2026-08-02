@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { config } from '@/portfolio.config';
+import { ui, levelLabel } from '@/lib/ui-strings';
 import { fadeUpVariants } from '@/lib/animation';
 
 const fadeUp = fadeUpVariants(40, 0.7, 0.1);
@@ -9,13 +10,6 @@ const LEVEL_DOTS: Record<string, number> = {
   fluent: 3,
   conversational: 2,
   basic: 1,
-};
-
-const LEVEL_LABEL: Record<string, string> = {
-  native: 'Native',
-  fluent: 'Fluent',
-  conversational: 'Conversational',
-  basic: 'Basic',
 };
 
 function ProficiencyDots({ level }: { level: string }) {
@@ -53,7 +47,7 @@ export function Languages() {
           viewport={{ once: true, margin: '-80px' }}
           className="text-primary mb-4 font-mono text-xs font-medium tracking-widest uppercase"
         >
-          Communication
+          {ui.languages.eyebrow}
         </motion.p>
         <motion.h2
           variants={fadeUp}
@@ -63,12 +57,11 @@ export function Languages() {
           viewport={{ once: true, margin: '-80px' }}
           className="section-heading text-foreground mb-14 text-4xl md:text-5xl"
         >
-          Languages
+          {ui.languages.heading}
         </motion.h2>
 
         <div className="flex flex-wrap gap-4">
           {langs.map((lang, i) => {
-            const levelKey = lang.level.toLowerCase();
             return (
               <motion.div
                 key={lang.name}
@@ -85,7 +78,7 @@ export function Languages() {
                     {lang.name}
                   </p>
                   <p className="text-muted-foreground text-xs tracking-wide">
-                    {LEVEL_LABEL[levelKey] ?? lang.level}
+                    {levelLabel(lang.level)}
                   </p>
                 </div>
                 <ProficiencyDots level={lang.level} />

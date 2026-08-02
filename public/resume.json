@@ -1,193 +1,174 @@
 {
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
-    "name": "Git Vitae",
-    "label": "Portfolio-Resume Engineer",
-    "image": "https://api.dicebear.com/9.x/fun-emoji/svg?seed=Alex&mouth[]=wideSmile&radius=12",
-    "email": "git-vitae@proton.me",
+    "name": "Julio Trujillo Alvarado",
+    "label": "Computer Engineer",
+    "image": "",
+    "email": "t.a.j@outlook.com",
     "phone": "",
-    "summary": "I'm a full-stack engineer with 5+ years of experience building products\nthat people love. I specialize in React, Node.js, and distributed systems.\nWhen I'm not coding, I'm hiking trails or experimenting with new coffee\nbrewing methods.\n",
+    "summary": "I like teamwork, being proactive, and analyzing problems under pressure.\nI am persistent, punctual, and personal responsibility is part of my day\nto day. I have worked in the IT sector incorporating positive skills,\nwith expectations of growth on a personal and professional level.\n",
     "location": {
-      "city": "San Francisco",
-      "region": "CA"
+      "city": "Zapopan",
+      "region": "Jalisco"
     },
     "profiles": [
       {
         "network": "GitHub",
-        "url": "https://github.com/yourusername",
-        "username": "yourusername"
+        "url": "https://github.com/JulioTrujilloA",
+        "username": "JulioTrujilloA"
       },
       {
         "network": "LinkedIn",
-        "url": "https://linkedin.com/in/yourusername",
-        "username": "yourusername"
+        "url": "https://linkedin.com/in/juliotrujilloalvarado",
+        "username": "juliotrujilloalvarado"
       }
     ]
   },
   "work": [
     {
-      "name": "Acme Corp",
-      "position": "Senior Full-Stack Engineer",
-      "startDate": "2022",
-      "endDate": "",
-      "summary": "Led migration of monolithic Rails app to microservices.\nReduced p99 latency by 60%. Mentored a team of 4 engineers.\n",
+      "name": "iCorp®",
+      "position": "On-Site Support Coordinator",
+      "startDate": "May 2022",
+      "endDate": "February 2026",
+      "summary": "Provided on-site support for the IT department of an\nagriculture-oriented company, documenting processes and\nsupporting PMO projects.\n",
       "highlights": [
-        "Microservices migration",
-        "60% latency reduction",
-        "Team leadership"
+        "Documented IT procedures and processes",
+        "Set up reports and dashboards in Jira",
+        "Training and document management (SharePoint)"
       ]
     },
     {
-      "name": "Startup XYZ",
-      "position": "Software Engineer",
-      "startDate": "2020",
-      "endDate": "2022",
-      "summary": "Built real-time collaboration features for a SaaS platform serving\n50k users. Owned the entire frontend from scratch.\n",
+      "name": "CONAFOR®",
+      "position": "Technical Documenter",
+      "startDate": "May 2019",
+      "endDate": "May 2022",
+      "summary": "Documented ICT contracting and coordinated Feasibility Studies\nbefore the specialized government function, in line with\nMAAGTICSI.\n",
       "highlights": [
-        "Real-time collaboration",
-        "50k users",
-        "Frontend ownership"
+        "ICT contracting management (MAAGTICSI)",
+        "Coordinated Feasibility Studies",
+        "Drove adoption of unified work repositories"
       ]
     },
     {
-      "name": "Freelance",
-      "position": "Web Developer",
-      "startDate": "2018",
-      "endDate": "2020",
-      "summary": "Delivered 20+ web projects for small businesses and agencies across\ne-commerce, marketing, and internal tools.\n",
+      "name": "Axtel®",
+      "position": "Systems Analyst",
+      "startDate": "September 2018",
+      "endDate": "March 2019",
+      "summary": "Served CONAFOR's internal customer, continuing development of\nthe Time Clock System in CodeIgniter and maintaining legacy\nsystems.\n",
       "highlights": [
-        "20+ projects",
-        "E-commerce",
-        "Internal tools"
+        "Development in CodeIgniter",
+        "Code and version control with Git",
+        "MySQL and SQL Server troubleshooting"
+      ]
+    },
+    {
+      "name": "Netwarmonitor®",
+      "position": "Consultant",
+      "startDate": "January 2017",
+      "endDate": "June 2018",
+      "summary": "Trained and implemented administrative software (point of sale)\nfor clients, and coordinated delivery of INADEM government\nbenefits.\n",
+      "highlights": [
+        "Remote (AnyDesk) and on-site training",
+        "Help desk with Mantislog and Freshdesk",
+        "Functional and acceptance testing"
+      ]
+    },
+    {
+      "name": "CONTPAQi®",
+      "position": "SLA & Software Development",
+      "startDate": "December 2015",
+      "endDate": "October 2016",
+      "summary": "Level 3 SLA for the Payroll System, resolving SQL Server and\nDelphi errors, with incident tracking in OTRS.\n",
+      "highlights": [
+        "Level 3 SLA support",
+        "Delphi development and maintenance (Visual Studio + TFS)",
+        "Functional and acceptance testing"
       ]
     }
   ],
   "education": [
     {
-      "institution": "University of California, Berkeley",
-      "area": "B.S. Computer Science",
+      "institution": "Tecmillenio, Mexico",
+      "area": "MSc in IT Management",
       "studyType": "",
-      "startDate": "2014",
-      "endDate": "2018"
+      "startDate": "August 2020",
+      "endDate": "September 2022"
+    },
+    {
+      "institution": "University of Guadalajara",
+      "area": "Bachelor of Science in Computer Engineering",
+      "studyType": "",
+      "startDate": "August 2010",
+      "endDate": "December 2014"
     }
   ],
   "skills": [
     {
-      "name": "Frontend",
-      "keywords": [
-        "React",
-        "TypeScript",
-        "Next.js",
-        "Tailwind CSS",
-        "Framer Motion"
-      ]
-    },
-    {
       "name": "Backend",
       "keywords": [
-        "Node.js",
-        "Express",
-        "PostgreSQL",
-        "Redis",
-        "GraphQL"
+        "Java",
+        "PHP",
+        "Delphi",
+        "CodeIgniter"
       ]
     },
     {
-      "name": "DevOps",
+      "name": "Frontend",
       "keywords": [
-        "Docker",
-        "AWS",
-        "CI/CD",
-        "Kubernetes",
-        "Terraform"
-      ]
-    },
-    {
-      "name": "Tools",
-      "keywords": [
-        "Git",
-        "Figma",
-        "Jest",
-        "Storybook",
-        "Datadog"
-      ]
-    }
-  ],
-  "projects": [
-    {
-      "name": "OpenDesk",
-      "description": "An open-source project management tool built with React and Go. 2.3k GitHub stars. Real-time updates via WebSockets.",
-      "keywords": [
-        "React",
-        "Go",
-        "WebSockets",
-        "PostgreSQL"
-      ],
-      "url": "https://opendesk.example.com"
-    },
-    {
-      "name": "CodeLens",
-      "description": "VS Code extension that uses AI to generate inline documentation. 10k+ installs from the marketplace.",
-      "keywords": [
-        "TypeScript",
-        "OpenAI",
-        "VS Code API"
-      ],
-      "url": "https://github.com/yourusername/codelens"
-    },
-    {
-      "name": "PriceWatch",
-      "description": "Browser extension that tracks price history on e-commerce sites and alerts users to drops.",
-      "keywords": [
+        "HTML & CSS",
         "JavaScript",
-        "Chrome API",
-        "Node.js"
-      ],
-      "url": "https://pricewatch.example.com"
+        "jQuery"
+      ]
     },
     {
-      "name": "Logbook",
-      "description": "A minimalist journaling app with end-to-end encryption. Built in a weekend. 500+ users.",
+      "name": "Databases",
       "keywords": [
-        "React Native",
-        "SQLite",
-        "Crypto"
-      ],
-      "url": "https://github.com/yourusername/logbook"
+        "MySQL",
+        "SQL Server"
+      ]
+    },
+    {
+      "name": "Help Desk / ITSM",
+      "keywords": [
+        "Jira",
+        "Freshdesk",
+        "Mantis BT",
+        "SLAs",
+        "ITSM"
+      ]
+    },
+    {
+      "name": "Management",
+      "keywords": [
+        "Project Management",
+        "ITIL (knowledge)",
+        "Budget Management"
+      ]
     }
   ],
+  "projects": [],
   "certificates": [
     {
-      "name": "AWS Certified Solutions Architect – Associate",
-      "issuer": "Amazon Web Services",
-      "date": "2023",
-      "url": "https://aws.amazon.com/verification"
+      "name": "Oracle Certified Java Programmer 6",
+      "issuer": "Develop Talent & Technology",
+      "date": "2015",
+      "url": ""
     },
     {
-      "name": "Professional Scrum Master I",
-      "issuer": "Scrum.org",
-      "date": "2022",
-      "url": "https://www.scrum.org/certificates"
-    },
-    {
-      "name": "Google Professional Data Engineer",
-      "issuer": "Google Cloud",
-      "date": "2021",
+      "name": "Java Backend Development Training",
+      "issuer": "Generation México",
+      "date": "2018",
       "url": ""
     }
   ],
   "languages": [
     {
-      "language": "English",
+      "language": "Spanish",
       "fluency": "Native"
     },
     {
-      "language": "Spanish",
+      "language": "English",
       "fluency": "Conversational"
-    },
-    {
-      "language": "Mandarin",
-      "fluency": "Basic"
     }
   ]
 }

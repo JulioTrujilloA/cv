@@ -10,10 +10,37 @@
 import type { ColorPreset, PresetPalette } from '@/lib/themes';
 import rawConfigYaml from '../portfolio.config.yaml';
 
-const rawConfig = rawConfigYaml as unknown as {
-  name: string;
+export type Lang = 'en' | 'es';
+export const LANGUAGE_STORAGE_KEY = 'portfolio-lang';
+export const DEFAULT_LANG: Lang = 'en';
+
+interface LocalizedContent {
   title: string;
   tagline: string;
+  about: string;
+  stats: { label: string; value: number; prefix?: string; suffix?: string }[];
+  languages: { name: string; level: string }[];
+  skills: { category: string; items: string[] }[];
+  experience: {
+    company: string;
+    role: string;
+    period: string;
+    description: string;
+    highlights?: string[];
+  }[];
+  education: { institution: string; degree: string; period: string }[];
+  certifications: {
+    title: string;
+    issuer: string;
+    date: string;
+    credentialUrl: string;
+    badgeUrl: string;
+    tags: string[];
+  }[];
+}
+
+const rawConfig = rawConfigYaml as unknown as {
+  name: string;
   email: string;
   phone?: string;
   location: string;
@@ -28,17 +55,7 @@ const rawConfig = rawConfigYaml as unknown as {
   customColors?: PresetPalette;
   social: Record<string, string>;
   sections: { id: string; show: boolean }[];
-  about: string;
-  stats: { label: string; value: number; prefix?: string; suffix?: string }[];
-  languages: { name: string; level: string }[];
-  skills: { category: string; items: string[] }[];
-  experience: {
-    company: string;
-    role: string;
-    period: string;
-    description: string;
-    highlights?: string[];
-  }[];
+  content: { en: LocalizedContent; es: LocalizedContent };
   projects: {
     name: string;
     description: string;
@@ -46,15 +63,6 @@ const rawConfig = rawConfigYaml as unknown as {
     liveUrl: string;
     repoUrl: string;
     featured: boolean;
-  }[];
-  education: { institution: string; degree: string; period: string }[];
-  certifications: {
-    title: string;
-    issuer: string;
-    date: string;
-    credentialUrl: string;
-    badgeUrl: string;
-    tags: string[];
   }[];
   publications: {
     title: string;
@@ -89,6 +97,23 @@ const rawConfig = rawConfigYaml as unknown as {
     description?: string;
   };
 };
+
+// Resolved once per page load — the language toggle persists the choice and
+// reloads the page rather than swapping content live. Keeps every section
+// component reading plain config fields, unaware that content is bilingual.
+export function getStoredLang(): Lang {
+  if (typeof window === 'undefined') return DEFAULT_LANG;
+  const stored = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
+  return stored === 'en' || stored === 'es' ? stored : DEFAULT_LANG;
+}
+
+export function setStoredLang(lang: Lang) {
+  window.localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
+  window.location.reload();
+}
+
+const currentLang = getStoredLang();
+const localized = rawConfig.content[currentLang] ?? rawConfig.content.en;
 
 export type SectionId =
   | 'about'
@@ -155,13 +180,15 @@ export interface ResumeTheme {
 
 export const config = {
   ...rawConfig,
+  ...localized,
+  lang: currentLang,
   colorPreset: rawConfig.colorPreset as ColorPreset,
   defaultTheme: rawConfig.defaultTheme as 'system' | 'light' | 'dark',
   siteMode: (rawConfig.siteMode ?? 'portfolio') as 'landing' | 'portfolio',
   sections: rawConfig.sections as SectionEntry[],
-  stats: (rawConfig.stats ?? []) as Stat[],
-  languages: (rawConfig.languages ?? []) as Language[],
-  certifications: (rawConfig.certifications ?? []) as Certification[],
+  stats: (localized.stats ?? []) as Stat[],
+  languages: (localized.languages ?? []) as Language[],
+  certifications: (localized.certifications ?? []) as Certification[],
   publications: (rawConfig.publications ?? []) as Publication[],
   testimonials: (rawConfig.testimonials ?? []) as Testimonial[],
   siteUrl: rawConfig.siteUrl ?? '',

@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 import { config } from '@/portfolio.config';
+import { ui, levelLabel } from '@/lib/ui-strings';
 import { applyThemePalette, hexToPresetPalette } from '@/lib/themes';
 import { ShareModal } from '@/components/ShareModal';
 
@@ -114,7 +115,7 @@ function ExperienceBlock() {
     return null;
   return (
     <div className="mb-6">
-      <SectionLabel>Experience</SectionLabel>
+      <SectionLabel>{ui.resumePage.experience}</SectionLabel>
       <div className="space-y-4">
         {config.experience.map((job, i) => (
           <div key={i} className="break-inside-avoid">
@@ -162,7 +163,7 @@ function ProjectsBlock({ condensed = false }: { condensed?: boolean }) {
   if (!shown.length) return null;
   return (
     <div className="mb-6">
-      <SectionLabel>Projects</SectionLabel>
+      <SectionLabel>{ui.resumePage.projects}</SectionLabel>
       <div className="space-y-3">
         {shown.map((proj, i) => (
           <div key={i} className="break-inside-avoid">
@@ -205,7 +206,7 @@ function SkillsBlock() {
   if (!isSectionVisible('skills') || !config.skills?.length) return null;
   return (
     <div className="mb-5">
-      <SectionLabel>Skills</SectionLabel>
+      <SectionLabel>{ui.resumePage.skills}</SectionLabel>
       <div className="space-y-1.5">
         {config.skills.map((cat) => (
           <div
@@ -229,7 +230,7 @@ function EducationBlock() {
   if (!isSectionVisible('education') || !config.education?.length) return null;
   return (
     <div className="mb-5">
-      <SectionLabel>Education</SectionLabel>
+      <SectionLabel>{ui.resumePage.education}</SectionLabel>
       <div className="space-y-2">
         {config.education.map((edu, i) => (
           <div key={i} className="break-inside-avoid">
@@ -256,7 +257,7 @@ function CertificationsBlock() {
     return null;
   return (
     <div className="mb-5">
-      <SectionLabel>Certifications</SectionLabel>
+      <SectionLabel>{ui.resumePage.certifications}</SectionLabel>
       <div className="space-y-1.5">
         {config.certifications.map((cert, i) => (
           <div key={i} className="flex break-inside-avoid items-start gap-2">
@@ -282,7 +283,7 @@ function LanguagesBlock() {
   if (!config.languages?.length) return null;
   return (
     <div className="mb-5">
-      <SectionLabel>Languages</SectionLabel>
+      <SectionLabel>{ui.resumePage.languages}</SectionLabel>
       <div className="space-y-1">
         {config.languages.map((lang) => (
           <div
@@ -290,7 +291,9 @@ function LanguagesBlock() {
             className="flex items-center justify-between text-xs"
           >
             <span className="text-foreground font-medium">{lang.name}</span>
-            <span className="text-muted-foreground">{lang.level}</span>
+            <span className="text-muted-foreground">
+              {levelLabel(lang.level)}
+            </span>
           </div>
         ))}
       </div>
@@ -303,7 +306,7 @@ function PublicationsBlock() {
   if (!isSectionVisible('publications') || !pubs.length) return null;
   return (
     <div className="mb-6">
-      <SectionLabel>Publications</SectionLabel>
+      <SectionLabel>{ui.resumePage.publications}</SectionLabel>
       <div className="space-y-3">
         {pubs.map((pub, i) => (
           <div key={i} className="break-inside-avoid">
@@ -351,7 +354,7 @@ function AboutBlock() {
   if (!isSectionVisible('about') || !config.about) return null;
   return (
     <div className="mb-6">
-      <SectionLabel>Summary</SectionLabel>
+      <SectionLabel>{ui.resumePage.summary}</SectionLabel>
       <p className="text-muted-foreground text-xs leading-relaxed">
         {config.about}
       </p>
@@ -451,14 +454,14 @@ export function ResumePage({ theme, onToggleTheme }: ResumePageProps) {
           className="text-muted-foreground hover:text-foreground flex items-center gap-1.5 text-xs font-medium transition-colors"
         >
           <ArrowLeft size={13} />
-          Portfolio
+          {ui.resumePage.backToPortfolio}
         </a>
 
         {/* Layout switcher */}
         <div className="bg-secondary border-border flex items-center gap-1 rounded-lg border p-1">
           <button
             onClick={() => setAndStore('two-column')}
-            aria-label="Two-column layout"
+            aria-label={ui.resumePage.twoColumnAria}
             aria-pressed={layout === 'two-column'}
             className={`flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium transition-all ${
               layout === 'two-column'
@@ -467,11 +470,11 @@ export function ResumePage({ theme, onToggleTheme }: ResumePageProps) {
             }`}
           >
             <Columns2 size={13} />
-            <span className="hidden sm:inline">Two Column</span>
+            <span className="hidden sm:inline">{ui.resumePage.twoColumn}</span>
           </button>
           <button
             onClick={() => setAndStore('classic')}
-            aria-label="Classic layout"
+            aria-label={ui.resumePage.classicAria}
             aria-pressed={layout === 'classic'}
             className={`flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium transition-all ${
               layout === 'classic'
@@ -480,7 +483,7 @@ export function ResumePage({ theme, onToggleTheme }: ResumePageProps) {
             }`}
           >
             <AlignJustify size={13} />
-            <span className="hidden sm:inline">Classic</span>
+            <span className="hidden sm:inline">{ui.resumePage.classic}</span>
           </button>
         </div>
 
@@ -488,18 +491,18 @@ export function ResumePage({ theme, onToggleTheme }: ResumePageProps) {
         <div className="flex items-center gap-2">
           <button
             onClick={() => setShareOpen(true)}
-            aria-label="Share resume"
+            aria-label={ui.resumePage.shareAria}
             className="border-border text-muted-foreground hover:text-foreground hover:border-primary/40 flex items-center gap-1.5 rounded-full border px-3.5 py-2 text-xs font-medium transition-all"
           >
             <Share2 size={13} />
-            <span className="hidden sm:inline">Share</span>
+            <span className="hidden sm:inline">{ui.resumePage.share}</span>
           </button>
           <button
             onClick={() => window.print()}
             className="bg-primary text-primary-foreground flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-medium tracking-wide transition-opacity hover:opacity-90"
           >
             <Printer size={13} />
-            Save PDF
+            {ui.resumePage.savePdf}
           </button>
         </div>
       </div>

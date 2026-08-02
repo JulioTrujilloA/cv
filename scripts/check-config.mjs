@@ -49,6 +49,13 @@ try {
   process.exit(1);
 }
 
+// Bilingual content lives under content.en / content.es — validate against
+// the default language (en) so downstream checks can keep reading cfg.title,
+// cfg.about, etc. directly, same as before bilingual support existed.
+if (cfg.content) {
+  Object.assign(cfg, cfg.content.en ?? cfg.content.es ?? {});
+}
+
 // ── Result counters ───────────────────────────────────────────────────────────
 let passes = 0, warnings = 0, errors = 0;
 

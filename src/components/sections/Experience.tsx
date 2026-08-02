@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { config } from '@/portfolio.config';
+import { ui } from '@/lib/ui-strings';
 import { fadeUpVariants } from '@/lib/animation';
 
 const fadeUp = fadeUpVariants(40, 0.75, 0.13);
@@ -16,7 +17,7 @@ export function Experience() {
           viewport={{ once: true, margin: '-80px' }}
           className="text-primary mb-4 font-mono text-xs font-medium tracking-widest uppercase"
         >
-          Career
+          {ui.experience.eyebrow}
         </motion.p>
         <motion.h2
           variants={fadeUp}
@@ -26,7 +27,7 @@ export function Experience() {
           viewport={{ once: true, margin: '-80px' }}
           className="section-heading text-foreground mb-14 text-4xl md:text-5xl"
         >
-          Work Experience
+          {ui.experience.heading}
         </motion.h2>
 
         <div className="relative">

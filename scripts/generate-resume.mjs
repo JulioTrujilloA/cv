@@ -23,6 +23,12 @@ const config = yaml.load(
   readFileSync(join(ROOT, "portfolio.config.yaml"), "utf8")
 );
 
+// Bilingual content lives under content.en / content.es — generate the
+// downloadable resume artifacts from the default language (en).
+if (config.content) {
+  Object.assign(config, config.content.en ?? config.content.es ?? {});
+}
+
 // ── helpers ───────────────────────────────────────────────────────────────────
 
 /** Parse "2022 – Present"  →  { startDate: "2022", endDate: "" } */

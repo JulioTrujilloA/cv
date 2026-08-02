@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Award, ExternalLink } from 'lucide-react';
 import { config } from '@/portfolio.config';
+import { ui } from '@/lib/ui-strings';
 import { fadeUpVariants } from '@/lib/animation';
 
 const fadeUp = fadeUpVariants(36, 0.7, 0.1);
@@ -19,7 +20,7 @@ export function Certifications() {
           viewport={{ once: true, margin: '-80px' }}
           className="text-primary mb-4 font-mono text-xs font-medium tracking-widest uppercase"
         >
-          Certifications
+          {ui.certifications.eyebrow}
         </motion.p>
         <motion.h2
           variants={fadeUp}
@@ -29,7 +30,7 @@ export function Certifications() {
           viewport={{ once: true, margin: '-80px' }}
           className="section-heading text-foreground mb-10 text-4xl md:text-5xl"
         >
-          Credentials & Badges
+          {ui.certifications.heading}
         </motion.h2>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -107,7 +108,7 @@ export function Certifications() {
                     rel="noopener noreferrer"
                     className="text-primary flex items-center gap-1 text-xs hover:underline"
                   >
-                    Verify <ExternalLink size={11} />
+                    {ui.certifications.verify} <ExternalLink size={11} />
                   </a>
                 )}
               </div>

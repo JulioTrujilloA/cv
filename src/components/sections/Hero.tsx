@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
-import { Download, MapPin, Phone, ArrowDown } from 'lucide-react';
+import { Download, MapPin, Mail, ArrowDown } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { config } from '@/portfolio.config';
+import { ui } from '@/lib/ui-strings';
 
 function Avatar() {
   if (config.avatarUrl) {
@@ -130,7 +131,7 @@ export function Hero() {
           {config.openToWork && (
             <span className="inline-flex items-center gap-1.5 rounded-full border border-green-500/20 bg-green-500/10 px-3 py-1 text-xs font-medium tracking-wide text-green-600 uppercase dark:text-green-400">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-500" />
-              Open to opportunities
+              {ui.hero.openToOpportunities}
             </span>
           )}
 
@@ -149,7 +150,7 @@ export function Hero() {
 
           {config.tagline && <TypewriterText text={config.tagline} />}
 
-          {(config.location || config.phone) && (
+          {(config.location || config.email) && (
             <p className="text-muted-foreground mt-1 flex flex-wrap items-center justify-center gap-3 text-xs font-medium tracking-wider uppercase">
               {config.location && (
                 <span className="flex items-center gap-1.5">
@@ -157,16 +158,16 @@ export function Hero() {
                   {config.location}
                 </span>
               )}
-              {config.location && config.phone && (
+              {config.location && config.email && (
                 <span className="opacity-30">·</span>
               )}
-              {config.phone && (
+              {config.email && (
                 <a
-                  href={`tel:${config.phone.replace(/\s/g, '')}`}
+                  href={`mailto:${config.email}`}
                   className="hover:text-foreground flex items-center gap-1.5 transition-colors"
                 >
-                  <Phone size={12} />
-                  {config.phone}
+                  <Mail size={12} />
+                  {config.email}
                 </a>
               )}
             </p>
@@ -228,7 +229,7 @@ export function Hero() {
             className="bg-primary text-primary-foreground rounded-xl px-7 py-3 text-sm font-medium tracking-wide transition-opacity hover:opacity-90"
             data-testid="button-view-work"
           >
-            View My Work
+            {ui.hero.viewWork}
           </a>
           <a
             href="#/resume"
@@ -236,7 +237,7 @@ export function Hero() {
             data-testid="button-view-resume"
           >
             <Download size={14} />
-            View Resume
+            {ui.hero.viewResume}
           </a>
         </motion.div>
       </motion.div>
@@ -253,7 +254,7 @@ export function Hero() {
             ?.scrollIntoView({ behavior: 'smooth' })
         }
         className="text-muted-foreground hover:text-foreground absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce rounded-full p-2 transition-colors"
-        aria-label="Scroll down"
+        aria-label={ui.hero.scrollAria}
         data-testid="button-scroll-down"
       >
         <ArrowDown size={18} />

@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
 import { config } from '@/portfolio.config';
+import { ui } from '@/lib/ui-strings';
 import { ShareModal } from '@/components/ShareModal';
 import { ChangelogModal } from '@/components/ChangelogModal';
 import { fadeUpVariants } from '@/lib/animation';
@@ -29,11 +30,10 @@ export function Contact() {
   const [status, setStatus] = useState<FormStatus>('idle');
 
   const hasEndpoint = !!config.contactFormEndpoint;
-  const contactHeading = config.contactHeading ?? 'Get In Touch';
-  const contactTitle = config.contactTitle ?? 'Let’s work\ntogether.';
+  const contactHeading = config.contactHeading ?? ui.contact.heading;
+  const contactTitle = config.contactTitle ?? ui.contact.title;
   const contactDescription =
-    config.contactDescription ??
-    'Open to new opportunities. Whether you have a role in mind or just want to connect — my inbox is always open.';
+    config.contactDescription ?? ui.contact.description;
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -124,7 +124,7 @@ export function Contact() {
                   htmlFor="contact-name"
                   className="text-muted-foreground text-xs font-medium tracking-wide"
                 >
-                  Your name
+                  {ui.contact.nameLabel}
                 </label>
                 <input
                   id="contact-name"
@@ -132,7 +132,7 @@ export function Contact() {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="Your Name"
+                  placeholder={ui.contact.namePlaceholder}
                   className="border-border bg-background text-foreground placeholder:text-muted-foreground focus:ring-primary/40 focus:border-primary/40 w-full rounded-xl border px-4 py-3 text-sm transition-colors focus:ring-1 focus:outline-none"
                 />
               </div>
@@ -141,7 +141,7 @@ export function Contact() {
                   htmlFor="contact-email"
                   className="text-muted-foreground text-xs font-medium tracking-wide"
                 >
-                  Your email
+                  {ui.contact.emailLabel}
                 </label>
                 <input
                   id="contact-email"
@@ -149,7 +149,7 @@ export function Contact() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your email"
+                  placeholder={ui.contact.emailPlaceholder}
                   className="border-border bg-background text-foreground placeholder:text-muted-foreground focus:ring-primary/40 focus:border-primary/40 w-full rounded-xl border px-4 py-3 text-sm transition-colors focus:ring-1 focus:outline-none"
                 />
               </div>
@@ -159,7 +159,7 @@ export function Contact() {
                 htmlFor="contact-message"
                 className="text-muted-foreground text-xs font-medium tracking-wide"
               >
-                Message
+                {ui.contact.messageLabel}
               </label>
               <textarea
                 id="contact-message"
@@ -167,7 +167,7 @@ export function Contact() {
                 rows={5}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="Tell me about your project or opportunity…"
+                placeholder={ui.contact.messagePlaceholder}
                 className="border-border bg-background text-foreground placeholder:text-muted-foreground focus:ring-primary/40 focus:border-primary/40 w-full resize-none rounded-xl border px-4 py-3 text-sm transition-colors focus:ring-1 focus:outline-none"
               />
             </div>
@@ -175,13 +175,13 @@ export function Contact() {
             {status === 'success' && (
               <div className="flex items-center gap-2 rounded-xl border border-green-500/30 bg-green-500/10 px-4 py-3 text-sm text-green-600 dark:text-green-400">
                 <CheckCircle size={16} className="shrink-0" />
-                Message sent! I&rsquo;ll get back to you soon.
+                {ui.contact.successMsg}
               </div>
             )}
             {status === 'error' && (
               <div className="flex items-center gap-2 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-600 dark:text-red-400">
                 <AlertCircle size={16} className="shrink-0" />
-                Something went wrong — please try emailing directly.
+                {ui.contact.errorMsg}
               </div>
             )}
 
@@ -192,19 +192,19 @@ export function Contact() {
             >
               <Send size={15} />
               {status === 'sending'
-                ? 'Sending…'
+                ? ui.contact.sending
                 : hasEndpoint
-                  ? 'Send message'
-                  : 'Open in email app'}
+                  ? ui.contact.sendMessage
+                  : ui.contact.openEmailApp}
             </button>
             {!hasEndpoint && (
               <p className="text-muted-foreground text-center text-xs">
-                Opens your email client with the message pre-filled.{' '}
+                {ui.contact.mailtoHint}{' '}
                 <a
                   href={`mailto:${config.email}`}
                   className="text-primary underline-offset-2 hover:underline"
                 >
-                  Or email directly →
+                  {ui.contact.mailtoLink}
                 </a>
               </p>
             )}
@@ -302,7 +302,7 @@ export function Contact() {
               data-testid="button-download-resume-footer"
             >
               <Download size={14} />
-              Download Resume
+              {ui.contact.downloadResume}
             </a>
             <button
               onClick={() => setShareOpen(true)}
@@ -310,7 +310,7 @@ export function Contact() {
               data-testid="button-share-resume-footer"
             >
               <Share2 size={14} />
-              Share Portfolio
+              {ui.contact.sharePortfolio}
             </button>
           </motion.div>
 
@@ -326,7 +326,7 @@ export function Contact() {
             className="border-border/60 w-full border-t pt-8 text-center"
           >
             <p className="text-muted-foreground font-mono text-xs tracking-wide">
-              Built with{' '}
+              {ui.contact.builtWith}{' '}
               <a
                 href="https://github.com/git-vitae/git-vitae.github.io"
                 target="_blank"
@@ -335,14 +335,14 @@ export function Contact() {
               >
                 GitVitae
               </a>{' '}
-              &mdash; fork and make it yours.
+              {ui.contact.forkIt}
             </p>
             <button
               onClick={() => setChangelogOpen(true)}
               className="text-muted-foreground/60 hover:text-primary no-print mt-2 inline-flex items-center gap-1.5 text-[11px] transition-colors"
             >
               <Sparkles size={10} />
-              What's new in v1.3
+              {ui.contact.whatsNew}
             </button>
           </motion.div>
 

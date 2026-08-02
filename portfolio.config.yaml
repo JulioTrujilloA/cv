@@ -17,13 +17,12 @@ siteUrl:  "https://juliotrujilloa.github.io/cv"  # ← Your GitHub Pages URL (us
 showPoweredBy: false  # Set to true to show a small "Made with GitVitae" badge in your footer (helps others discover GitVitae)
 
 # ── Identity ───────────────────────────────────────────── (required) ──
-name: "Git Vitae"              # Your name — shown in the header and used as a fallback in the avatar
-title: "Portfolio-Resume Engineer"
-tagline: "I build free portfolios and resumes for everyone."
-email: "git-vitae@proton.me"
-phone: ""                    # Optional — e.g. "+1 (555) 000-1234". Shown in contact section and resume.
-location: "San Francisco, CA"
-avatarUrl: "https://api.dicebear.com/9.x/fun-emoji/svg?seed=Alex&mouth[]=wideSmile&radius=12"  # Demo avatar — replace with your own photo URL (see instructions below)
+name: "Julio Trujillo Alvarado"              # Your name — shown in the header and used as a fallback in the avatar
+# title / tagline: bilingües — ver el bloque "content:" más abajo
+email: "t.a.j@outlook.com"
+phone: ""                    # Vacío a propósito — este repo es público, no quieres tu número ahí. Optional — e.g. "+1 (555) 000-1234". Shown in contact section and resume.
+location: "Zapopan, Jalisco, México"
+avatarUrl: ""  # Vacío = se muestran tus iniciales como placeholder. Sube tu foto y pega la URL cuando quieras.
 # How to add a profile photo (free, no extra account needed):
 #   1. Go to your GitHub repo → click "Add file" → "Upload files"
 #   2. Upload your photo (e.g. avatar.jpg) into a folder called "public/"
@@ -72,210 +71,279 @@ sections:
   - { id: skills,         show: true  }
   - { id: languages,      show: true  }
   - { id: experience,     show: true  }
-  - { id: projects,       show: true  }
+  - { id: projects,       show: false }  # Sin proyectos personales en el CV todavía — actívalo si agregamos alguno
   - { id: education,      show: true  }
   - { id: certifications, show: true  }
   - { id: publications,   show: false }
-  - { id: testimonials,   show: true  }
+  - { id: testimonials,   show: false }  # Sin recomendaciones reales todavía
   - { id: contact,        show: true  }
 
 # ── Social links ───────────────────────────── (leave blank to hide) ───
 social:
-  github:   "https://github.com/yourusername"
-  linkedin: "https://linkedin.com/in/yourusername"
+  github:   "https://github.com/JulioTrujilloA"
+  linkedin: "https://linkedin.com/in/juliotrujilloalvarado"
   twitter:  ""
   website:  ""
 
-# ── About ──────────────────────────────────────────────────────────────
-# Use | for multi-line text. Indent each line by 2 spaces.
-about: |
-  I'm a portfolio-resume engineer with 5+ years of experience building products
-  that people love. I specialize in React, Node.js, and distributed systems.
-  When I'm not coding, I'm hiking trails or experimenting with new coffee
-  brewing methods.
+# ── Content (bilingüe) ────────────────────────────────────────────────
+# Todo lo que cambia entre idiomas vive aquí, duplicado en "en" y "es".
+# El botón EN/ES del navbar guarda tu elección y recarga la página — por
+# defecto entra en inglés. Los labels de navegación/botones de la interfaz
+# (About, Skills, Resume, etc.) se quedan siempre en inglés a propósito,
+# solo el contenido de tu CV cambia de idioma.
+content:
+  en:
+    title: "Computer Engineer"
+    tagline: "IT support, process documentation, and project management with 10+ years of experience."
 
+    about: |
+      I like teamwork, being proactive, and analyzing problems under pressure.
+      I am persistent, punctual, and personal responsibility is part of my day
+      to day. I have worked in the IT sector incorporating positive skills,
+      with expectations of growth on a personal and professional level.
 
-# ── Stats ──────────────────────────────────────────────────────────────
-# Customise each label and value freely — change "Projects Shipped" to
-# "Active Customers", "Happy Clients", "Open Source Stars", etc.
-# Optional fields: prefix (e.g. "$") and suffix (e.g. "+" or "k").
-# Remove all entries or set show: false above to hide this section.
-stats:
-  - { label: "Years Experience", value: 5,    suffix: "+" }
-  - { label: "Projects Shipped", value: 20,   suffix: "+" }
-  - { label: "Happy Clients",    value: 50,   suffix: "+" }
-  - { label: "Cups of Coffee",   value: 1200, suffix: ""  }
+    stats:
+      - { label: "Years of Experience", value: 10, suffix: "+" }
+      - { label: "Companies",           value: 5,  suffix: ""  }
+      - { label: "Certifications",      value: 2,  suffix: ""  }
+      - { label: "Languages",           value: 2,  suffix: ""  }
 
-# Examples of other combinations you can use:
-#   - { label: "Active Users",    value: 10000, suffix: "+" }
-#   - { label: "Revenue",         value: 2,     prefix: "$", suffix: "M+" }
-#   - { label: "Countries",       value: 12,    suffix: ""  }
+    # level options: Native | Fluent | Conversational | Basic — keep these
+    # exact English words even here, the site uses them as lookup keys.
+    languages:
+      - { name: "Spanish", level: "Native"        }
+      - { name: "English", level: "Conversational" }
 
-# ── Languages ──────────────────────────────────────────────────────────
-# level options: Native | Fluent | Conversational | Basic
-languages:
-  - { name: "English",  level: "Native"        }
-  - { name: "Spanish",  level: "Conversational" }
-  - { name: "Mandarin", level: "Basic"          }
+    skills:
+      - category: "Backend"
+        items: [Java, PHP, Delphi, CodeIgniter]
+      - category: "Frontend"
+        items: ["HTML & CSS", JavaScript, jQuery]
+      - category: "Databases"
+        items: [MySQL, "SQL Server"]
+      - category: "Help Desk / ITSM"
+        items: [Jira, Freshdesk, "Mantis BT", SLAs, ITSM]
+      - category: "Management"
+        items: ["Project Management", "ITIL (knowledge)", "Budget Management"]
 
-# ── Skills ─────────────────────────────────────────────────────────────
-skills:
-  - category: "Frontend"
-    items: [React, TypeScript, Next.js, Tailwind CSS, Framer Motion]
-  - category: "Backend"
-    items: [Node.js, Express, PostgreSQL, Redis, GraphQL]
-  - category: "DevOps"
-    items: [Docker, AWS, CI/CD, Kubernetes, Terraform]
-  - category: "Tools"
-    items: [Git, Figma, Jest, Storybook, Datadog]
+    experience:
+      - company: "iCorp®"
+        role: "On-Site Support Coordinator"
+        period: "May 2022 – February 2026"
+        description: |
+          Provided on-site support for the IT department of an
+          agriculture-oriented company, documenting processes and
+          supporting PMO projects.
+        highlights:
+          - Documented IT procedures and processes
+          - Set up reports and dashboards in Jira
+          - Training and document management (SharePoint)
 
-# ── Experience ─────────────────────────────────────────────────────────
-experience:
-  - company: "Acme Corp"
-    role: "Senior Full-Stack Engineer"
-    period: "2022 – Present"
-    description: |
-      Led migration of monolithic Rails app to microservices.
-      Reduced p99 latency by 60%. Mentored a team of 4 engineers.
-    highlights:
-      - Microservices migration
-      - 60% latency reduction
-      - Team leadership
+      - company: "CONAFOR®"
+        role: "Technical Documenter"
+        period: "May 2019 – May 2022"
+        description: |
+          Documented ICT contracting and coordinated Feasibility Studies
+          before the specialized government function, in line with
+          MAAGTICSI.
+        highlights:
+          - ICT contracting management (MAAGTICSI)
+          - Coordinated Feasibility Studies
+          - Drove adoption of unified work repositories
 
-  - company: "Startup XYZ"
-    role: "Software Engineer"
-    period: "2020 – 2022"
-    description: |
-      Built real-time collaboration features for a SaaS platform serving
-      50k users. Owned the entire frontend from scratch.
-    highlights:
-      - Real-time collaboration
-      - 50k users
-      - Frontend ownership
+      - company: "Axtel®"
+        role: "Systems Analyst"
+        period: "September 2018 – March 2019"
+        description: |
+          Served CONAFOR's internal customer, continuing development of
+          the Time Clock System in CodeIgniter and maintaining legacy
+          systems.
+        highlights:
+          - Development in CodeIgniter
+          - Code and version control with Git
+          - MySQL and SQL Server troubleshooting
 
-  - company: "Freelance"
-    role: "Web Developer"
-    period: "2018 – 2020"
-    description: |
-      Delivered 20+ web projects for small businesses and agencies across
-      e-commerce, marketing, and internal tools.
-    highlights:
-      - 20+ projects
-      - E-commerce
-      - Internal tools
+      - company: "Netwarmonitor®"
+        role: "Consultant"
+        period: "January 2017 – June 2018"
+        description: |
+          Trained and implemented administrative software (point of sale)
+          for clients, and coordinated delivery of INADEM government
+          benefits.
+        highlights:
+          - Remote (AnyDesk) and on-site training
+          - Help desk with Mantislog and Freshdesk
+          - Functional and acceptance testing
+
+      - company: "CONTPAQi®"
+        role: "SLA & Software Development"
+        period: "December 2015 – October 2016"
+        description: |
+          Level 3 SLA for the Payroll System, resolving SQL Server and
+          Delphi errors, with incident tracking in OTRS.
+        highlights:
+          - Level 3 SLA support
+          - Delphi development and maintenance (Visual Studio + TFS)
+          - Functional and acceptance testing
+
+    education:
+      - institution: "Tecmillenio, Mexico"
+        degree: "MSc in IT Management"
+        period: "August 2020 – September 2022"
+
+      - institution: "University of Guadalajara"
+        degree: "Bachelor of Science in Computer Engineering"
+        period: "August 2010 – December 2014"
+
+    certifications:
+      - title: "Oracle Certified Java Programmer 6"
+        issuer: "Develop Talent & Technology"
+        date: "2015"
+        credentialUrl: ""
+        badgeUrl: ""
+        tags: [Java, Certification]
+
+      - title: "Java Backend Development Training"
+        issuer: "Generation México"
+        date: "2018"
+        credentialUrl: ""
+        badgeUrl: ""
+        tags: [Java, Backend]
+
+  es:
+    title: "Ingeniero en Computación"
+    tagline: "Soporte de TI, documentación de procesos y gestión de proyectos con más de 10 años de experiencia."
+
+    about: |
+      Me gusta el trabajo en equipo, ser proactivo y el análisis de problemas bajo presión.
+      Soy persistente, puntual y la responsabilidad personal forma parte de mi día a día.
+      He trabajado en el sector de TI incorporando aptitudes positivas, con expectativas
+      de crecimiento a nivel personal y profesional.
+
+    stats:
+      - { label: "Años de experiencia", value: 10, suffix: "+" }
+      - { label: "Empresas",            value: 5,  suffix: ""  }
+      - { label: "Certificaciones",     value: 2,  suffix: ""  }
+      - { label: "Idiomas",             value: 2,  suffix: ""  }
+
+    # level: mismas palabras en inglés que arriba — el sitio las usa como
+    # llave interna para elegir color/puntos de nivel, no se traducen.
+    languages:
+      - { name: "Español", level: "Native"        }
+      - { name: "Inglés",   level: "Conversational" }
+
+    skills:
+      - category: "Backend"
+        items: [Java, PHP, Delphi, CodeIgniter]
+      - category: "Frontend"
+        items: ["HTML & CSS", JavaScript, jQuery]
+      - category: "Bases de datos"
+        items: [MySQL, "SQL Server"]
+      - category: "Mesa de ayuda / ITSM"
+        items: [Jira, Freshdesk, "Mantis BT", SLAs, ITSM]
+      - category: "Gestión"
+        items: ["Project Management", "ITIL (knowledge)", "Budget Management"]
+
+    experience:
+      - company: "icorp®"
+        role: "Coordinador de Soporte en Sitio"
+        period: "Mayo 2022 – Febrero 2026"
+        description: |
+          Brindé soporte en sitio para el departamento de TI de una compañía del
+          sector agrícola, documentando procesos y apoyando proyectos de la PMO.
+        highlights:
+          - Documentación de procedimientos y procesos de TI
+          - Configuración de reportes y tableros en Jira
+          - Capacitación y gestión documental (SharePoint)
+
+      - company: "CONAFOR®"
+        role: "Documentador Técnico"
+        period: "Mayo 2019 – Mayo 2022"
+        description: |
+          Documenté contrataciones de TIC y coordiné estudios de factibilidad
+          ante la función de gobierno especializada, apegado al MAAGTICSI.
+        highlights:
+          - Gestión de contrataciones de TIC (MAAGTICSI)
+          - Coordinación de estudios de factibilidad
+          - Adopción de repositorios de trabajo unificados
+
+      - company: "Axtel®"
+        role: "Analista de Sistemas"
+        period: "Septiembre 2018 – Marzo 2019"
+        description: |
+          Di servicio al cliente interno de CONAFOR, continuando el desarrollo
+          del Sistema de Reloj Checador en CodeIgniter y dando mantenimiento a
+          sistemas legacy.
+        highlights:
+          - Desarrollo en CodeIgniter
+          - Control de código y versiones con Git
+          - Resolución de problemas en MySQL y SQL Server
+
+      - company: "Netwarmonitor®"
+        role: "Consultor"
+        period: "Enero 2017 – Junio 2018"
+        description: |
+          Capacité e implementé software administrativo (punto de venta) a
+          clientes, y coordiné la entrega de beneficios gubernamentales del
+          INADEM.
+        highlights:
+          - Capacitación remota (AnyDesk) y en sitio
+          - Mesa de ayuda con Mantislog y Freshdesk
+          - Testing funcional y pruebas de aceptación
+
+      - company: "CONTPAQi®"
+        role: "SLA y Desarrollo de Software"
+        period: "Diciembre 2015 – Octubre 2016"
+        description: |
+          SLA de Nivel 3 para el Sistema de Nóminas, resolviendo errores en SQL
+          Server y Delphi, con seguimiento de incidencias en OTRS.
+        highlights:
+          - Soporte SLA Nivel 3
+          - Desarrollo y mantenimiento en Delphi (Visual Studio + TFS)
+          - Testing funcional y pruebas de aceptación
+
+    education:
+      - institution: "Tecmillenio, México"
+        degree: "Maestría en Gestión de TI"
+        period: "Agosto 2020 – Septiembre 2022"
+
+      - institution: "Universidad de Guadalajara"
+        degree: "Licenciatura en Ingeniería en Computación"
+        period: "Agosto 2010 – Diciembre 2014"
+
+    certifications:
+      - title: "Oracle Certified Java Programmer 6"
+        issuer: "Develop Talent & Technology"
+        date: "2015"
+        credentialUrl: ""
+        badgeUrl: ""
+        tags: [Java, Certificación]
+
+      - title: "Formación para Desarrollo Java Backend"
+        issuer: "Generation México"
+        date: "2018"
+        credentialUrl: ""
+        badgeUrl: ""
+        tags: [Java, Backend]
 
 # ── Projects ───────────────────────────────────────────────────────────
 # Set featured: true to show in the Featured section (max 3 recommended)
-projects:
-  - name: "OpenDesk"
-    description: "An open-source project management tool built with React and Go. 2.3k GitHub stars. Real-time updates via WebSockets."
-    tags: [React, Go, WebSockets, PostgreSQL]
-    liveUrl: "https://opendesk.example.com"
-    repoUrl: "https://github.com/yourusername/opendesk"
-    featured: true
-
-  - name: "CodeLens"
-    description: "VS Code extension that uses AI to generate inline documentation. 10k+ installs from the marketplace."
-    tags: [TypeScript, OpenAI, "VS Code API"]
-    liveUrl: ""
-    repoUrl: "https://github.com/yourusername/codelens"
-    featured: true
-
-  - name: "PriceWatch"
-    description: "Browser extension that tracks price history on e-commerce sites and alerts users to drops."
-    tags: [JavaScript, "Chrome API", Node.js]
-    liveUrl: "https://pricewatch.example.com"
-    repoUrl: "https://github.com/yourusername/pricewatch"
-    featured: false
-
-  - name: "Logbook"
-    description: "A minimalist journaling app with end-to-end encryption. Built in a weekend. 500+ users."
-    tags: ["React Native", SQLite, Crypto]
-    liveUrl: ""
-    repoUrl: "https://github.com/yourusername/logbook"
-    featured: false
-
-# ── Education ──────────────────────────────────────────────────────────
-education:
-  - institution: "University of California, Berkeley"
-    degree: "B.S. Computer Science"
-    period: "2014 – 2018"
-
-# ── Certifications ─────────────────────────────────────────────────────
-certifications:
-  - title: "AWS Certified Solutions Architect – Associate"
-    issuer: "Amazon Web Services"
-    date: "2023"
-    credentialUrl: "https://aws.amazon.com/verification"
-    badgeUrl: "https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png"
-    tags: [Cloud, Architecture, AWS]
-
-  - title: "Professional Scrum Master I"
-    issuer: "Scrum.org"
-    date: "2022"
-    credentialUrl: "https://www.scrum.org/certificates"
-    badgeUrl: "https://images.credly.com/size/340x340/images/a2790314-008a-4c3d-9e11-2a8f48155adc/image.png"
-    tags: [Agile, Scrum, Leadership]
-
-  - title: "Google Professional Data Engineer"
-    issuer: "Google Cloud"
-    date: "2021"
-    credentialUrl: ""
-    badgeUrl: ""
-    tags: [Data, GCP, BigQuery]
+# Vacío por ahora — no había proyectos personales en tu CV. Si quieres mostrar
+# alguno de tus repos (dev-hub, bolsillo, mi-dinero, barber-app...), dime y
+# lo agrego aquí (y activa `projects` de nuevo en la lista `sections` abajo).
+projects: []
 
 
 # ── Publications ───────────────────────────────────────────────────────
 # Optional — ideal for researchers, academics, and technical writers.
 # type options: conference | journal | preprint | book-chapter | workshop
-publications:
-  - title: "Scaling Real-Time Collaboration in Distributed Systems"
-    authors: "Rivera A, Chen L, Patel S"
-    venue: "USENIX ATC 2023"
-    year: "2023"
-    url: "https://arxiv.org/abs/example"
-    type: "conference"
-    tags: [distributed-systems, real-time, scalability]
-
-  - title: "Micro-Frontend Architecture Patterns for Large-Scale SPAs"
-    authors: "Rivera A"
-    venue: "IEEE Software"
-    year: "2022"
-    url: ""
-    type: "journal"
-    tags: [frontend, architecture, micro-frontends]
+# Vacío — no aplica a tu CV actual.
+publications: []
 
 # ── Testimonials ───────────────────────────────────────────────────────
-testimonials:
-  - name: "Sarah Chen"
-    title: "Engineering Manager"
-    company: "Acme Corp"
-    relationship: "Manager"   # e.g. Manager | Colleague | Client | Mentor
-    quote: |
-      Alex is one of the most thoughtful engineers I've had the pleasure of
-      working with. They consistently delivered high-quality work on time and
-      elevated the entire team's standards.
-    photoUrl: ""              # URL to headshot — leave empty for initials
-
-  - name: "James Okafor"
-    title: "Senior Product Designer"
-    company: "Startup XYZ"
-    relationship: "Colleague"
-    quote: |
-      Working with Alex was a joy. They have a rare ability to translate vague
-      product requirements into clean, elegant code. Our collaboration made the
-      product significantly better.
-    photoUrl: ""
-
-  - name: "Priya Nair"
-    title: "CTO"
-    company: "FinTech Ventures"
-    relationship: "Client"
-    quote: |
-      Alex delivered the project ahead of schedule and the code quality was
-      exceptional. They communicated proactively, flagged risks early, and were
-      genuinely invested in our success.
-    photoUrl: ""
+# Vacío — no invento recomendaciones. Si tienes cotizaciones reales de
+# excompañeros/jefes que quieras mostrar, dímelas y las agrego.
+testimonials: []
 
 # ── Analytics (optional, always free) ──────────────────────────────────────
 # Two ways to track who visits your portfolio — both free, no credit card:

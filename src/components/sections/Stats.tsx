@@ -7,6 +7,7 @@ import {
   useInView,
 } from 'framer-motion';
 import { config } from '@/portfolio.config';
+import { ui } from '@/lib/ui-strings';
 import { fadeUpVariants } from '@/lib/animation';
 
 const fadeUp = fadeUpVariants(40, 0.7, 0.1);
@@ -72,7 +73,7 @@ export function Stats() {
           viewport={{ once: true, margin: '-80px' }}
           className="text-primary mb-4 font-mono text-xs font-medium tracking-widest uppercase"
         >
-          By the numbers
+          {ui.stats.eyebrow}
         </motion.p>
         <motion.h2
           variants={fadeUp}
@@ -82,7 +83,7 @@ export function Stats() {
           viewport={{ once: true, margin: '-80px' }}
           className="section-heading text-foreground mb-14 text-4xl md:text-5xl"
         >
-          At a Glance
+          {ui.stats.heading}
         </motion.h2>
 
         <div

@@ -9,7 +9,8 @@ import {
   ChevronDown,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { config } from '@/portfolio.config';
+import { config, setStoredLang } from '@/portfolio.config';
+import { ui } from '@/lib/ui-strings';
 import { ShareModal } from '@/components/ShareModal';
 
 interface NavbarProps {
@@ -18,19 +19,7 @@ interface NavbarProps {
   topOffset: number;
 }
 
-const SECTION_LABELS: Record<string, string> = {
-  about: 'About',
-  stats: 'Stats',
-  skills: 'Skills',
-  languages: 'Languages',
-  experience: 'Experience',
-  projects: 'Projects',
-  education: 'Education',
-  certifications: 'Certifications',
-  publications: 'Publications',
-  testimonials: 'Testimonials',
-  contact: 'Contact',
-};
+const SECTION_LABELS: Record<string, string> = ui.nav;
 
 const allNavLinks = config.sections
   .filter((s) => s.show)
@@ -204,7 +193,7 @@ export function Navbar({ theme, onToggleTheme, topOffset }: NavbarProps) {
                     : 'text-muted-foreground hover:text-foreground hover:bg-secondary'
                 }`}
               >
-                More
+                {ui.nav.more}
                 <motion.span
                   animate={{ rotate: moreOpen ? 180 : 0 }}
                   transition={{ duration: 0.18 }}
@@ -251,7 +240,7 @@ export function Navbar({ theme, onToggleTheme, topOffset }: NavbarProps) {
                         className="text-muted-foreground hover:text-foreground hover:bg-secondary flex items-center gap-2.5 px-4 py-2.5 text-xs font-medium tracking-widest uppercase transition-colors"
                       >
                         <span className="h-1.5 w-1.5 flex-shrink-0" />
-                        Blog
+                        {ui.nav.blog}
                       </a>
                     )}
                   </motion.div>
@@ -276,7 +265,7 @@ export function Navbar({ theme, onToggleTheme, topOffset }: NavbarProps) {
           <button
             onClick={() => setShareOpen(true)}
             className="border-border hover:border-primary/40 bg-secondary/50 hover:bg-secondary text-muted-foreground hover:text-foreground rounded-full border p-2 transition-all"
-            aria-label="Share portfolio"
+            aria-label={ui.nav.shareAria}
             data-testid="button-share-nav"
           >
             <Share2 size={16} />
@@ -285,7 +274,7 @@ export function Navbar({ theme, onToggleTheme, topOffset }: NavbarProps) {
           <button
             onClick={onToggleTheme}
             className="border-border hover:border-primary/40 bg-secondary/50 hover:bg-secondary text-muted-foreground hover:text-foreground overflow-hidden rounded-full border p-2 transition-all"
-            aria-label="Toggle theme"
+            aria-label={ui.nav.themeAria}
             data-testid="button-toggle-theme"
           >
             <AnimatePresence mode="wait" initial={false}>
@@ -315,6 +304,16 @@ export function Navbar({ theme, onToggleTheme, topOffset }: NavbarProps) {
             </AnimatePresence>
           </button>
 
+          <button
+            onClick={() => setStoredLang(config.lang === 'en' ? 'es' : 'en')}
+            className="border-border hover:border-primary/40 bg-secondary/50 hover:bg-secondary text-muted-foreground hover:text-foreground rounded-full border px-2.5 py-2 text-[11px] font-semibold tracking-wide transition-all"
+            aria-label={ui.nav.langAria}
+            data-testid="button-toggle-language"
+            title={config.lang === 'en' ? ui.nav.langTitleToEs : ui.nav.langTitleToEn}
+          >
+            {config.lang === 'en' ? 'ES' : 'EN'}
+          </button>
+
           {config.resumeUrl ? (
             <a
               href={config.resumeUrl}
@@ -323,7 +322,7 @@ export function Navbar({ theme, onToggleTheme, topOffset }: NavbarProps) {
               data-testid="button-download-resume-nav"
             >
               <Download size={13} />
-              Resume
+              {ui.nav.resume}
             </a>
           ) : (
             <a
@@ -332,14 +331,14 @@ export function Navbar({ theme, onToggleTheme, topOffset }: NavbarProps) {
               data-testid="button-download-resume-nav"
             >
               <Download size={13} />
-              Resume
+              {ui.nav.resume}
             </a>
           )}
 
           <button
             className="text-muted-foreground hover:text-foreground hover:bg-secondary rounded-md p-2 transition-colors md:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
+            aria-label={ui.nav.menuAria}
             data-testid="button-mobile-menu"
           >
             <AnimatePresence mode="wait" initial={false}>
@@ -409,7 +408,7 @@ export function Navbar({ theme, onToggleTheme, topOffset }: NavbarProps) {
                   className="text-muted-foreground hover:text-foreground hover:bg-secondary flex items-center gap-2.5 rounded-md px-3 py-3 text-xs font-medium tracking-widest uppercase transition-colors"
                 >
                   <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full" />
-                  Blog
+                  {ui.nav.blog}
                 </a>
               )}
               {config.resumeUrl ? (
@@ -418,7 +417,7 @@ export function Navbar({ theme, onToggleTheme, topOffset }: NavbarProps) {
                   download={config.resumeFileName || 'resume.pdf'}
                   className="text-primary hover:bg-accent flex items-center gap-2 rounded-md px-3 py-3 text-xs font-medium tracking-widest uppercase transition-colors"
                 >
-                  <Download size={13} /> Download Resume
+                  <Download size={13} /> {ui.nav.downloadResume}
                 </a>
               ) : (
                 <a
@@ -426,7 +425,7 @@ export function Navbar({ theme, onToggleTheme, topOffset }: NavbarProps) {
                   onClick={() => setMobileOpen(false)}
                   className="text-primary hover:bg-accent flex items-center gap-2 rounded-md px-3 py-3 text-xs font-medium tracking-widest uppercase transition-colors"
                 >
-                  <Download size={13} /> View Resume
+                  <Download size={13} /> {ui.nav.viewResume}
                 </a>
               )}
             </div>

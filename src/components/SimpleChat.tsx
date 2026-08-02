@@ -9,6 +9,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Progress } from '@/components/ui/progress';
 import { config } from '@/portfolio.config';
+import { ui } from '@/lib/ui-strings';
 import {
   webLLMService,
   type ChatMessage,
@@ -17,7 +18,7 @@ import {
 
 export function SimpleChat() {
   const MAX_CONVERSATION_PAIRS = 5; // Keep last 5 user/assistant exchanges
-  const greetingText = `Hi! I'm ${config.name}'s AI representative. Ask me anything about their experience, skills, or projects!`;
+  const greetingText = ui.chat.greeting(config.name);
   
   const [messages, setMessages] = React.useState<ChatMessage[]>([
     {
@@ -146,7 +147,7 @@ export function SimpleChat() {
         ...prev,
         {
           role: 'assistant',
-          content: `Sorry, I encountered an error: ${error instanceof Error ? error.message : 'Unknown error'}`,
+          content: `${ui.chat.errorPrefix} ${error instanceof Error ? error.message : ui.chat.unknownError}`,
         },
       ]);
     } finally {
@@ -180,7 +181,7 @@ export function SimpleChat() {
               <Bot size={16} />
             </AvatarFallback>
           </Avatar>
-          <span className="text-sm font-semibold">AI Assistant</span>
+          <span className="text-sm font-semibold">{ui.chat.title}</span>
         </div>
         <Button
           variant="ghost"
@@ -199,10 +200,10 @@ export function SimpleChat() {
             <Loader2 size={16} className="animate-spin" />
             <span className="text-sm font-medium">
               {webLLMStatus.progress === 0
-                ? 'Initializing AI...'
+                ? ui.chat.initializing
                 : webLLMStatus.progress && webLLMStatus.progress < 100
-                  ? `Loading model: ${webLLMStatus.progress}%`
-                  : 'Finalizing setup...'}
+                  ? ui.chat.loadingModel(webLLMStatus.progress)
+                  : ui.chat.finalizing}
             </span>
           </div>
           {webLLMStatus.progress !== undefined && webLLMStatus.progress > 0 && (
@@ -217,7 +218,7 @@ export function SimpleChat() {
             <X size={16} className="text-destructive mt-0.5" />
             <div>
               <p className="text-destructive text-sm font-medium">
-                AI Unavailable
+                {ui.chat.unavailable}
               </p>
               <p className="text-muted-foreground mt-1 text-xs">
                 {webLLMStatus.error}
@@ -230,9 +231,8 @@ export function SimpleChat() {
       {/* Disclaimer */}
       <div className="border-b border-amber-200 bg-amber-50 px-4 py-2 dark:border-amber-800/30 dark:bg-amber-900/20">
         <p className="text-xs text-amber-700 dark:text-amber-600">
-          ⚠️ <span className="font-medium">Disclaimer:</span> AI-generated
-          answers may contain errors. Please verify important information
-          independently.
+          ⚠️ <span className="font-medium">{ui.chat.disclaimerLabel}</span>{' '}
+          {ui.chat.disclaimerText}
         </p>
       </div>
 
@@ -296,7 +296,7 @@ export function SimpleChat() {
               <div className="bg-muted text-muted-foreground max-w-[80%] rounded-2xl rounded-tl-none px-4 py-2 text-sm">
                 <div className="flex items-center gap-2">
                   <Loader2 size={14} className="animate-spin" />
-                  <span>Thinking...</span>
+                  <span>{ui.chat.thinking}</span>
                 </div>
               </div>
             </div>
@@ -316,10 +316,10 @@ export function SimpleChat() {
           <Input
             placeholder={
               webLLMStatus.status === 'error'
-                ? 'AI unavailable...'
+                ? ui.chat.placeholderError
                 : webLLMStatus.status === 'loading'
-                  ? 'Loading AI model...'
-                  : `Ask about ${config.name}'s experience...`
+                  ? ui.chat.placeholderLoading
+                  : ui.chat.placeholderReady(config.name)
             }
             value={input}
             onChange={(e) => setInput(e.target.value)}

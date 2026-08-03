@@ -143,7 +143,8 @@ function metaAndSchemaPlugin() {
 
       const pageTitle = `${name} — ${jobTitle}`;
       const sameAs    = Object.values(social).filter(Boolean);
-      const ogImage   = avatar || "/opengraph.jpg";
+      const ogCard    = siteUrl ? `${siteUrl}/og-card.png` : "";
+      const ogImage   = ogCard || avatar || "/opengraph.jpg";
 
       let avatarOrigin: string | null = null;
       try {
@@ -167,9 +168,15 @@ function metaAndSchemaPlugin() {
         `<meta property="og:title"       content="${pageTitle}">`,
         `<meta property="og:description" content="${summary.slice(0, 200).replace(/"/g, "&quot;")}">`,
         `<meta property="og:image"       content="${ogImage}">`,
+        ...(ogCard
+          ? [`<meta property="og:image:width"  content="1200">`,
+             `<meta property="og:image:height" content="630">`]
+          : []),
+        ...(siteUrl ? [`<meta property="og:url" content="${siteUrl}">`] : []),
         `<meta name="twitter:card"        content="summary_large_image">`,
         `<meta name="twitter:title"       content="${pageTitle}">`,
         `<meta name="twitter:description" content="${summary.slice(0, 200).replace(/"/g, "&quot;")}">`,
+        `<meta name="twitter:image"       content="${ogImage}">`,
         `<script type="application/ld+json">${JSON.stringify(schema)}</script>`,
         ...(avatarOrigin ? [`<link rel="preconnect" href="${avatarOrigin}" crossorigin>`] : []),
         ...(blogOn && siteUrl

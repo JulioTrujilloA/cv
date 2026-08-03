@@ -115,6 +115,12 @@ export function setStoredLang(lang: Lang) {
 const currentLang = getStoredLang();
 const localized = rawConfig.content[currentLang] ?? rawConfig.content.en;
 
+// Mirror the resolved language on <html lang> — the static index.html always
+// says "en", so assistive tech and SEO need this correction when es is active.
+if (typeof document !== 'undefined') {
+  document.documentElement.lang = currentLang;
+}
+
 export type SectionId =
   | 'about'
   | 'stats'

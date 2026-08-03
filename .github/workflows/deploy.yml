@@ -51,6 +51,9 @@ jobs:
           echo "──────────────────────────────────────────────────────────────────"
           echo ""
 
+      - name: Run tests
+        run: pnpm test
+
       - name: Detect base path
         id: base
         run: |

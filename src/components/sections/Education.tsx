@@ -42,13 +42,13 @@ export function Education() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-60px' }}
-              className="border-border bg-card card-hover flex items-center gap-6 rounded-2xl border p-6"
+              className="border-border bg-card card-hover flex flex-wrap items-center gap-x-6 gap-y-3 rounded-2xl border p-6"
               data-testid={`education-${i}`}
             >
               <div className="bg-primary/10 text-primary flex h-12 w-12 shrink-0 items-center justify-center rounded-xl">
                 <GraduationCap size={20} />
               </div>
-              <div className="min-w-0 flex-1">
+              <div className="min-w-[10rem] flex-1">
                 <h3 className="text-foreground font-serif text-xl font-light">
                   {edu.degree}
                 </h3>

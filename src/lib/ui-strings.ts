@@ -6,7 +6,7 @@
  */
 import { getStoredLang } from '@/portfolio.config';
 
-const STRINGS = {
+export const STRINGS = {
   en: {
     common: {
       copyLink: 'Copy link',
@@ -93,7 +93,8 @@ const STRINGS = {
       followers: 'Followers',
       publicRepos: 'Public repos',
       topLanguages: 'Top languages',
-      rateLimited: 'GitHub API rate limit reached — stats will appear on next load.',
+      rateLimited:
+        'GitHub API rate limit reached — stats will appear on next load.',
     },
     openToWork: {
       badge: 'Open to opportunities',
@@ -133,7 +134,8 @@ const STRINGS = {
       shareOn: 'Share on',
       email: 'Email',
       qrCode: 'QR code',
-      qrHint: 'Put this on your business card, LinkedIn banner, or conference badge.',
+      qrHint:
+        'Put this on your business card, LinkedIn banner, or conference badge.',
       downloadPng: 'Download PNG',
       emailSignature: 'Email signature',
       copyHtml: 'Copy HTML',
@@ -265,11 +267,13 @@ const STRINGS = {
       followers: 'Seguidores',
       publicRepos: 'Repos públicos',
       topLanguages: 'Lenguajes principales',
-      rateLimited: 'Se alcanzó el límite de la API de GitHub — las cifras aparecerán en la próxima carga.',
+      rateLimited:
+        'Se alcanzó el límite de la API de GitHub — las cifras aparecerán en la próxima carga.',
     },
     openToWork: {
       badge: 'Disponible para nuevas oportunidades',
-      subtitle: 'Disponible para roles de tiempo completo y proyectos freelance',
+      subtitle:
+        'Disponible para roles de tiempo completo y proyectos freelance',
       cta: 'Contáctame',
       mailSubject: (name: string) => `Oportunidad para ${name}`,
       dismissAria: 'Cerrar aviso',
@@ -286,7 +290,8 @@ const STRINGS = {
       messageLabel: 'Mensaje',
       messagePlaceholder: 'Cuéntame sobre tu proyecto u oportunidad…',
       successMsg: '¡Mensaje enviado! Te responderé pronto.',
-      errorMsg: 'Algo salió mal — por favor intenta escribirme directo por correo.',
+      errorMsg:
+        'Algo salió mal — por favor intenta escribirme directo por correo.',
       sending: 'Enviando…',
       sendMessage: 'Enviar mensaje',
       openEmailApp: 'Abrir en app de correo',
@@ -305,7 +310,8 @@ const STRINGS = {
       shareOn: 'Compartir en',
       email: 'Correo',
       qrCode: 'Código QR',
-      qrHint: 'Ponlo en tu tarjeta de presentación, banner de LinkedIn o gafete de conferencia.',
+      qrHint:
+        'Ponlo en tu tarjeta de presentación, banner de LinkedIn o gafete de conferencia.',
       downloadPng: 'Descargar PNG',
       emailSignature: 'Firma de correo',
       copyHtml: 'Copiar HTML',
@@ -346,7 +352,8 @@ const STRINGS = {
       thinking: 'Pensando...',
       placeholderError: 'IA no disponible...',
       placeholderLoading: 'Cargando modelo de IA...',
-      placeholderReady: (name: string) => `Pregunta sobre la experiencia de ${name}...`,
+      placeholderReady: (name: string) =>
+        `Pregunta sobre la experiencia de ${name}...`,
       errorPrefix: 'Lo siento, ocurrió un error:',
       unknownError: 'Error desconocido',
     },

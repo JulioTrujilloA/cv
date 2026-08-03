@@ -72,12 +72,12 @@ export function CustomCursor() {
     <>
       <div
         ref={dotRef}
-        className="bg-primary pointer-events-none fixed top-0 left-0 z-[9999] h-2 w-2 rounded-full"
+        className="bg-primary pointer-events-none fixed top-0 left-0 z-[9999] h-2 w-2 rounded-full print:hidden"
         style={{ willChange: 'transform' }}
       />
       <div
         ref={ringRef}
-        className={`pointer-events-none fixed top-0 left-0 z-[9998] rounded-full border transition-[opacity,border-color] duration-200 ${
+        className={`pointer-events-none fixed top-0 left-0 z-[9998] rounded-full border transition-[opacity,border-color] duration-200 print:hidden ${
           isHovering
             ? 'border-primary opacity-80'
             : 'border-primary/50 opacity-60'

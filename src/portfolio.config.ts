@@ -103,6 +103,16 @@ const rawConfig = rawConfigYaml as unknown as {
 // component reading plain config fields, unaware that content is bilingual.
 export function getStoredLang(): Lang {
   if (typeof window === 'undefined') return DEFAULT_LANG;
+  // ?lang=en|es (before the #) seeds the stored choice and is then removed
+  // from the URL, so shared links open in a set language without pinning it
+  const url = new URL(window.location.href);
+  const fromUrl = url.searchParams.get('lang');
+  if (fromUrl === 'en' || fromUrl === 'es') {
+    window.localStorage.setItem(LANGUAGE_STORAGE_KEY, fromUrl);
+    url.searchParams.delete('lang');
+    window.history.replaceState(null, '', url);
+    return fromUrl;
+  }
   const stored = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
   return stored === 'en' || stored === 'es' ? stored : DEFAULT_LANG;
 }

@@ -416,6 +416,10 @@ function ClassicLayout() {
 
 export function ResumePage({ theme, onToggleTheme }: ResumePageProps) {
   const [layout, setLayout] = useState<Layout>(() => {
+    // ?layout=classic|two-column (before the #) beats the stored choice —
+    // gives shareable/printable links to a specific layout
+    const fromUrl = new URLSearchParams(window.location.search).get('layout');
+    if (fromUrl === 'classic' || fromUrl === 'two-column') return fromUrl;
     return (localStorage.getItem('resume-layout') as Layout) ?? 'two-column';
   });
   const [shareOpen, setShareOpen] = useState(false);
@@ -516,7 +520,7 @@ export function ResumePage({ theme, onToggleTheme }: ResumePageProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="bg-background min-h-[1123px] w-full max-w-[794px] rounded-xl p-10 shadow-xl print:min-h-0 print:rounded-none print:bg-white print:p-8 print:shadow-none"
+            className={`resume-paper ${layout === 'classic' ? 'resume-paper-classic' : ''} bg-background min-h-[1123px] w-full max-w-[794px] rounded-xl p-10 shadow-xl print:min-h-0 print:rounded-none print:bg-white print:p-0 print:shadow-none`}
           >
             {layout === 'two-column' ? <TwoColumnLayout /> : <ClassicLayout />}
           </motion.div>
@@ -526,7 +530,15 @@ export function ResumePage({ theme, onToggleTheme }: ResumePageProps) {
       {/* ── Print styles (scoped) ───────────────────────────────────── */}
       <style>{`
         @media print {
-          @page { margin: 1.4cm 1.6cm; size: A4 portrait; }
+          /* Compact margins by default (dialog "Default" uses these);
+             size:auto respects the paper chosen in the print dialog
+             (letter in MX) and overrides the global A4 rule from index.css */
+          @page { margin: 12mm 15mm; size: auto; }
+          /* Uniform shrink (~1pt of type) so the resume fits a single
+             letter page; zoom scales text, chips and spacing alike.
+             Classic stacks everything in one column, so it needs more. */
+          .resume-paper { zoom: 0.86; }
+          .resume-paper-classic { zoom: 0.76; }
           body { background: white !important; }
           /* Neutralise framer-motion transforms and min-height overflows */
           [data-framer-component-type],

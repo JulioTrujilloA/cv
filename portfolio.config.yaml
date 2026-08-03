@@ -105,7 +105,7 @@ content:
     stats:
       - { label: "Years of Experience", value: 10, suffix: "+" }
       - { label: "Companies",           value: 5,  suffix: ""  }
-      - { label: "Certifications",      value: 2,  suffix: ""  }
+      - { label: "Certifications",      value: 4,  suffix: ""  }
       - { label: "Languages",           value: 2,  suffix: ""  }
 
     # level options: Native | Fluent | Conversational | Basic — keep these
@@ -133,35 +133,35 @@ content:
         role: "On-Site Support Coordinator"
         period: "May 2022 – February 2026"
         description: |
-          Provided on-site support for the IT department of an
-          agriculture-oriented company, documenting processes and
+          Provided on-site support for 10+ users in the IT department of
+          an agriculture-oriented company, documenting processes and
           supporting PMO projects.
         highlights:
-          - Documented IT procedures and processes
-          - Set up reports and dashboards in Jira
-          - Training and document management (SharePoint)
+          - Met a yearly KPI of 35–50 service requests resolved (minor changes and small new features)
+          - Set up ~15 Jira boards and reports for 4 teams (Security, Infrastructure, Applications, and Data)
+          - Onboarded every new hire (10–15 people) and managed 2 SharePoint sites, including the PMO framework documentation
+          - Documented ~5 core IT procedures and processes
 
       - company: "CONAFOR®"
         role: "Technical Documenter"
         period: "May 2019 – May 2022"
         description: |
-          Documented ICT contracting and coordinated Feasibility Studies
-          before the specialized government function, in line with
-          MAAGTICSI.
+          Managed the ICT pre-contracting pipeline — POTIC portfolio and
+          feasibility studies — before the specialized government
+          function, in line with MAAGTICSI.
         highlights:
-          - ICT contracting management (MAAGTICSI)
-          - Coordinated Feasibility Studies
-          - Drove adoption of unified work repositories
+          - Steered ~10 technical feasibility rulings per year to "Favorable" approval, the mandatory green light for ICT contracting
+          - Managed POTIC portfolios of 5–10 ICT projects each (documentation, system filings, and observation follow-up)
+          - Drove adoption of unified work repositories across the 4 ICT teams (Networks, Technical Support, Infrastructure, and Systems)
 
       - company: "Axtel®"
         role: "Systems Analyst"
         period: "September 2018 – March 2019"
         description: |
-          Served CONAFOR's internal customer, continuing development of
-          the Time Clock System in CodeIgniter and maintaining legacy
-          systems.
+          Served CONAFOR's internal customer, continuing development and
+          maintenance of the legacy Time Clock System in CodeIgniter.
         highlights:
-          - Development in CodeIgniter
+          - Built schedule-review and statistics modules for ~1,000 users, informing attendance-deduction decisions
           - Code and version control with Git
           - MySQL and SQL Server troubleshooting
 
@@ -173,7 +173,8 @@ content:
           for clients, and coordinated delivery of INADEM government
           benefits.
         highlights:
-          - Remote (AnyDesk) and on-site training
+          - Trained and rolled out the POS for 50+ clients, remotely (AnyDesk) and on-site
+          - Coordinated 2 equipment deliveries to 100+ beneficiaries, collecting supporting paperwork
           - Help desk with Mantis BT and Freshdesk
           - Functional and acceptance testing
 
@@ -184,7 +185,7 @@ content:
           Level 3 SLA for the Payroll System, resolving SQL Server and
           Delphi errors, with incident tracking in OTRS.
         highlights:
-          - Level 3 SLA support
+          - Resolved ~2 level-3 escalations per week on the Payroll System
           - Delphi development and maintenance (Visual Studio + TFS)
           - Functional and acceptance testing
 
@@ -198,12 +199,26 @@ content:
         period: "August 2010 – December 2014"
 
     certifications:
-      - title: "Oracle Certified Java Programmer 6"
-        issuer: "Develop Talent & Technology"
+      - title: "Oracle Certified Professional, Java SE 6 Programmer"
+        issuer: "Oracle"
         date: "2015"
-        credentialUrl: ""
-        badgeUrl: ""
+        credentialUrl: "https://www.credly.com/badges/4945b65d-2bc3-4ec0-8131-6689cb23ca12"
+        badgeUrl: "https://images.credly.com/images/8271b3d7-090a-42ec-9b84-d4f845698abd/Oracle-Certification-badge_OC-Professional600X600.png"
         tags: [Java, Certification]
+
+      - title: "Metodología Básica para la Administración de Proyectos"
+        issuer: "IT Institute"
+        date: "2021"
+        credentialUrl: "https://www.credly.com/badges/4cbae7cd-d317-4776-a215-467caab3c1c7"
+        badgeUrl: "https://images.credly.com/images/e344ed92-bd04-4519-8f0a-0d0a90c8a311/MetodologiaBasica_para_la_Administracion_de_Proyectos.png"
+        tags: [Project Management]
+
+      - title: "Data Science Foundations - Level 1"
+        issuer: "IBM"
+        date: "2021"
+        credentialUrl: "https://www.credly.com/badges/cd4679a7-619a-4c32-a410-79c57c0c6dd4"
+        badgeUrl: "https://images.credly.com/images/5950e6bd-1d0b-40f0-9313-4b2fa36622ce/blob"
+        tags: [Data Science]
 
       - title: "Java Backend Development Training"
         issuer: "Generation México"
@@ -225,7 +240,7 @@ content:
     stats:
       - { label: "Años de experiencia", value: 10, suffix: "+" }
       - { label: "Empresas",            value: 5,  suffix: ""  }
-      - { label: "Certificaciones",     value: 2,  suffix: ""  }
+      - { label: "Certificaciones",     value: 4,  suffix: ""  }
       - { label: "Idiomas",             value: 2,  suffix: ""  }
 
     # level: mismas palabras en inglés que arriba — el sitio las usa como
@@ -253,33 +268,35 @@ content:
         role: "Coordinador de soporte en sitio"
         period: "Mayo 2022 – Febrero 2026"
         description: |
-          Brindé soporte en sitio para el departamento de TI de una compañía del
-          sector agrícola, documentando procesos y apoyando proyectos de la PMO.
+          Brindé soporte en sitio a más de 10 usuarios del departamento de TI de
+          una compañía del sector agrícola, documentando procesos y apoyando
+          proyectos de la PMO.
         highlights:
-          - Documentación de procedimientos y procesos de TI
-          - Configuración de reportes y tableros en Jira
-          - Capacitación y gestión documental (SharePoint)
+          - Cumplí el KPI anual de 35–50 service requests resueltos (cambios menores y funcionalidades pequeñas)
+          - Configuré ~15 tableros y reportes en Jira para 4 equipos (Seguridad, Infraestructura, Aplicaciones y Datos)
+          - Capacité a cada recién llegado (10–15 personas) y gestioné 2 sitios de SharePoint, incluida la documentación del framework de proyectos
+          - Documenté cerca de 5 procedimientos y procesos clave de TI
 
       - company: "CONAFOR®"
         role: "Documentador técnico"
         period: "Mayo 2019 – Mayo 2022"
         description: |
-          Documenté contrataciones de TIC y coordiné estudios de factibilidad
-          ante la función de gobierno especializada, apegado al MAAGTICSI.
+          Gestioné el paso previo a la contratación de TIC — cartera POTIC y
+          estudios de factibilidad — ante la función de gobierno especializada,
+          apegado al MAAGTICSI.
         highlights:
-          - Gestión de contrataciones de TIC (MAAGTICSI)
-          - Coordinación de estudios de factibilidad
-          - Adopción de repositorios de trabajo unificados
+          - Llevé ~10 dictámenes técnicos al año hasta el "Favorable", requisito obligatorio para poder contratar TIC
+          - Gestioné carteras POTIC de 5 a 10 proyectos de TIC cada una (documentación, carga al sistema y seguimiento de observaciones)
+          - Impulsé la adopción de repositorios de trabajo unificados en las 4 áreas de TIC (Redes, Soporte técnico, Infraestructura y Sistemas)
 
       - company: "Axtel®"
         role: "Analista de sistemas"
         period: "Septiembre 2018 – Marzo 2019"
         description: |
-          Di servicio al cliente interno de CONAFOR, continuando el desarrollo
-          del Sistema de Reloj Checador en CodeIgniter y dando mantenimiento a
-          sistemas legacy.
+          Di servicio al cliente interno de CONAFOR, continuando el desarrollo y
+          mantenimiento del Sistema de Reloj Checador (legacy) en CodeIgniter.
         highlights:
-          - Desarrollo en CodeIgniter
+          - Entregué módulos de revisión de horarios y estadísticas para ~1,000 usuarios, insumo para decidir descuentos por asistencia
           - Control de código y versiones con Git
           - Resolución de problemas en MySQL y SQL Server
 
@@ -291,7 +308,8 @@ content:
           clientes, y coordiné la entrega de beneficios gubernamentales del
           INADEM.
         highlights:
-          - Capacitación remota (AnyDesk) y en sitio
+          - Capacité e implementé el punto de venta a más de 50 clientes, en remoto (AnyDesk) y en sitio
+          - Coordiné 2 entregas de equipo a más de 100 beneficiarios, con recepción de su documentación
           - Mesa de ayuda con Mantis BT y Freshdesk
           - Testing funcional y pruebas de aceptación
 
@@ -302,7 +320,7 @@ content:
           SLA de Nivel 3 para el Sistema de Nóminas, resolviendo errores en SQL
           Server y Delphi, con seguimiento de incidencias en OTRS.
         highlights:
-          - Soporte SLA Nivel 3
+          - Resolví ~2 escalaciones de nivel 3 por semana del Sistema de Nóminas
           - Desarrollo y mantenimiento en Delphi (Visual Studio + TFS)
           - Testing funcional y pruebas de aceptación
 
@@ -316,12 +334,26 @@ content:
         period: "Agosto 2010 – Diciembre 2014"
 
     certifications:
-      - title: "Oracle Certified Java Programmer 6"
-        issuer: "Develop Talent & Technology"
+      - title: "Oracle Certified Professional, Java SE 6 Programmer"
+        issuer: "Oracle"
         date: "2015"
-        credentialUrl: ""
-        badgeUrl: ""
+        credentialUrl: "https://www.credly.com/badges/4945b65d-2bc3-4ec0-8131-6689cb23ca12"
+        badgeUrl: "https://images.credly.com/images/8271b3d7-090a-42ec-9b84-d4f845698abd/Oracle-Certification-badge_OC-Professional600X600.png"
         tags: [Java, Certificación]
+
+      - title: "Metodología Básica para la Administración de Proyectos"
+        issuer: "IT Institute"
+        date: "2021"
+        credentialUrl: "https://www.credly.com/badges/4cbae7cd-d317-4776-a215-467caab3c1c7"
+        badgeUrl: "https://images.credly.com/images/e344ed92-bd04-4519-8f0a-0d0a90c8a311/MetodologiaBasica_para_la_Administracion_de_Proyectos.png"
+        tags: [Gestión de proyectos]
+
+      - title: "Data Science Foundations - Level 1"
+        issuer: "IBM"
+        date: "2021"
+        credentialUrl: "https://www.credly.com/badges/cd4679a7-619a-4c32-a410-79c57c0c6dd4"
+        badgeUrl: "https://images.credly.com/images/5950e6bd-1d0b-40f0-9313-4b2fa36622ce/blob"
+        tags: [Ciencia de datos]
 
       - title: "Formación para Desarrollo Java Backend"
         issuer: "Generation México"

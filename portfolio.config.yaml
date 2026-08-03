@@ -59,7 +59,7 @@ resumeTheme:
   twoColumn: "custom"    # Accent color for the two-column resume layout
   classic: "custom"     # Accent color for the classic resume layout
 
-contactFormEndpoint: ""  # Optional — paste a Formspree URL (https://formspree.io/f/xxxx)
+contactFormEndpoint: "https://formspree.io/f/xnjeeygz"  # Optional — paste a Formspree URL (https://formspree.io/f/xxxx)
                            # or any POST endpoint that accepts {name, email, message}.
                            # Leave empty to use a pre-filled mailto: link instead.
 

@@ -129,7 +129,7 @@ content:
         items: ["POTIC Management", "Technical Assessments", "Feasibility Studies"]
 
     experience:
-      - company: "iCorp®"
+      - company: "icorp®"
         role: "On-Site Support Coordinator"
         period: "May 2022 – February 2026"
         description: |
@@ -174,7 +174,7 @@ content:
           benefits.
         highlights:
           - Remote (AnyDesk) and on-site training
-          - Help desk with Mantislog and Freshdesk
+          - Help desk with Mantis BT and Freshdesk
           - Functional and acceptance testing
 
       - company: "CONTPAQi®"
@@ -244,7 +244,7 @@ content:
       - category: "Mesa de ayuda / ITSM"
         items: [Jira, Freshdesk, "Mantis BT", SLAs, ITSM]
       - category: "Gestión"
-        items: ["Project Management", "ITIL (knowledge)", "Budget Management"]
+        items: ["Gestión de proyectos", "ITIL (conocimiento)", "Gestión de presupuesto"]
       - category: "Gobierno"
         items: ["Gestión de POTIC", "Dictámenes técnicos", "Estudios de Factibilidad"]
 
@@ -292,7 +292,7 @@ content:
           INADEM.
         highlights:
           - Capacitación remota (AnyDesk) y en sitio
-          - Mesa de ayuda con Mantislog y Freshdesk
+          - Mesa de ayuda con Mantis BT y Freshdesk
           - Testing funcional y pruebas de aceptación
 
       - company: "CONTPAQi®"
@@ -377,6 +377,6 @@ testimonials: []
 # Then write your post in plain Markdown below the closing ---.
 # See the sample posts in blog/ to get started.
 blog:
-  enabled: true
+  enabled: false
   title: "Blog"
   description: "Thoughts, stories and ideas — everything in one place."

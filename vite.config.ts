@@ -141,6 +141,7 @@ function metaAndSchemaPlugin() {
       const blogOn   = portfolioConfig.blog?.enabled ?? false;
       const blogTitle = portfolioConfig.blog?.title ?? "Blog";
 
+      const tabTitle  = `CV - ${name}`;
       const pageTitle = `${name} — ${jobTitle}`;
       const sameAs    = Object.values(social).filter(Boolean);
       const ogCard    = siteUrl ? `${siteUrl}/og-card.png` : "";
@@ -162,7 +163,7 @@ function metaAndSchemaPlugin() {
       };
 
       const inject = [
-        `<title>${pageTitle}</title>`,
+        `<title>${tabTitle}</title>`,
         `<meta name="description" content="${summary.slice(0, 160).replace(/"/g, "&quot;")}">`,
         `<meta property="og:type"        content="profile">`,
         `<meta property="og:title"       content="${pageTitle}">`,

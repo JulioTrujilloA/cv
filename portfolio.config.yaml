@@ -124,7 +124,7 @@ content:
       - category: "Help Desk / ITSM"
         items: [Jira, Freshdesk, "Mantis BT", SLAs, ITSM]
       - category: "Management"
-        items: ["Project Management", "ITIL (knowledge)", "Budget Management"]
+        items: ["Project Management", "ITIL (knowledge)", "Budget Management", "E-commerce (knowledge)"]
       - category: "Government"
         items: ["POTIC Management", "Technical Assessments", "Feasibility Studies"]
 
@@ -138,6 +138,7 @@ content:
           supporting PMO projects.
         highlights:
           - Met a yearly KPI of 35–50 service requests resolved (minor changes and small new features)
+          - Implemented Hybo, a hybrid workplace management platform, at company headquarters — delivered the project successfully
           - Set up ~15 Jira boards and reports for 4 teams (Security, Infrastructure, Applications, and Data)
           - Onboarded every new hire (10–15 people) and managed 2 SharePoint sites, including the PMO framework documentation
           - Documented ~5 core IT procedures and processes
@@ -259,7 +260,7 @@ content:
       - category: "Mesa de ayuda / ITSM"
         items: [Jira, Freshdesk, "Mantis BT", SLAs, ITSM]
       - category: "Gestión"
-        items: ["Gestión de proyectos", "ITIL (conocimiento)", "Gestión de presupuesto"]
+        items: ["Gestión de proyectos", "ITIL (conocimiento)", "Gestión de presupuesto", "E-commerce (conocimiento)"]
       - category: "Gobierno"
         items: ["Gestión de POTIC", "Dictámenes técnicos", "Estudios de Factibilidad"]
 
@@ -273,6 +274,7 @@ content:
           proyectos de la PMO.
         highlights:
           - Cumplí el KPI anual de 35–50 service requests resueltos (cambios menores y funcionalidades pequeñas)
+          - Implementé Hybo, plataforma de gestión de espacios de trabajo híbridos, en oficinas centrales — proyecto entregado con éxito
           - Configuré ~15 tableros y reportes en Jira para 4 equipos (Seguridad, Infraestructura, Aplicaciones y Datos)
           - Capacité a cada recién llegado (10–15 personas) y gestioné 2 sitios de SharePoint, incluida la documentación del framework de proyectos
           - Documenté cerca de 5 procedimientos y procesos clave de TI

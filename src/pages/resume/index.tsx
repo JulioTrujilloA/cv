@@ -537,8 +537,8 @@ export function ResumePage({ theme, onToggleTheme }: ResumePageProps) {
           /* Uniform shrink (~1pt of type) so the resume fits a single
              letter page; zoom scales text, chips and spacing alike.
              Classic stacks everything in one column, so it needs more. */
-          .resume-paper { zoom: 0.86; }
-          .resume-paper-classic { zoom: 0.76; }
+          .resume-paper { zoom: 0.82; }
+          .resume-paper-classic { zoom: 0.72; }
           body { background: white !important; }
           /* Neutralise framer-motion transforms and min-height overflows */
           [data-framer-component-type],

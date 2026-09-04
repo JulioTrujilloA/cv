@@ -97,8 +97,10 @@ content:
     tagline: "IT support, process documentation, and project management with 10+ years of experience."
 
     about: >-
-      I like teamwork, being proactive, and analyzing problems under pressure.
-      I am persistent, punctual, and personal responsibility is part of my day
+      With 10+ years in IT — coordinating and managing projects across
+      private companies and government institutions — I like teamwork,
+      being proactive, and analyzing problems under pressure. I am
+      persistent, punctual, and personal responsibility is part of my day
       to day. I have worked in the IT sector incorporating positive skills,
       with expectations of growth on a personal and professional level.
 
@@ -130,12 +132,13 @@ content:
 
     experience:
       - company: "icorp®"
-        role: "On-Site Support Coordinator"
+        role: "Project Manager & Coordinator"
         period: "May 2022 – February 2026"
         description: |
-          Provided on-site support for 10+ users in the IT department of
-          an agriculture-oriented company, documenting processes and
-          supporting PMO projects.
+          Served as project administrator and IT demand coordinator for
+          icorp's on-site account at a tomato-growing agribusiness —
+          supporting 10+ users, documenting processes, and delivering
+          PMO projects.
         highlights:
           - Met a yearly KPI of 35–50 service requests resolved (minor changes and small new features)
           - Implemented Hybo, a hybrid workplace management platform, at company headquarters — delivered the project successfully
@@ -144,7 +147,7 @@ content:
           - Documented ~5 core IT procedures and processes
 
       - company: "CONAFOR®"
-        role: "Technical Documenter"
+        role: "ICT Pre-Contracting Project Lead"
         period: "May 2019 – May 2022"
         description: |
           Managed the ICT pre-contracting pipeline — POTIC portfolio and
@@ -167,16 +170,16 @@ content:
           - MySQL and SQL Server troubleshooting
 
       - company: "Netwarmonitor®"
-        role: "Consultant"
+        role: "Project Coordinator & Consultant"
         period: "January 2017 – June 2018"
         description: |
-          Trained and implemented administrative software (point of sale)
-          for clients, and coordinated delivery of INADEM government
-          benefits.
+          Trained and rolled out point-of-sale software for clients, and
+          managed INADEM government benefit deliveries end-to-end — from
+          the beneficiary list through distribution.
         highlights:
           - Trained and rolled out the POS for 50+ clients, remotely (AnyDesk) and on-site
-          - Coordinated 2 equipment deliveries to 100+ beneficiaries, collecting supporting paperwork
-          - Help desk with Mantis BT and Freshdesk
+          - Managed INADEM benefit deliveries end-to-end — from the beneficiary list to 2 equipment deliveries for 100+ people, collecting supporting documentation
+          - Help desk (Mantis BT, Freshdesk) and support for the company's digital applications
           - Functional and acceptance testing
 
       - company: "CONTPAQi®"
@@ -233,7 +236,9 @@ content:
     tagline: "Soporte de TI, documentación de procesos y gestión de proyectos con más de 10 años de experiencia."
 
     about: >-
-      Me gusta el trabajo en equipo, ser proactivo y el análisis de problemas bajo presión.
+      Con más de 10 años en TI —coordinando y administrando proyectos en
+      empresas privadas e instituciones de gobierno— me gusta el trabajo en
+      equipo, ser proactivo y el análisis de problemas bajo presión.
       Soy persistente, puntual y la responsabilidad personal forma parte de mi día a día.
       He trabajado en el sector de TI incorporando aptitudes positivas, con expectativas
       de crecimiento a nivel personal y profesional.
@@ -266,12 +271,13 @@ content:
 
     experience:
       - company: "icorp®"
-        role: "Coordinador de soporte en sitio"
+        role: "Administrador de proyectos y coordinador"
         period: "Mayo 2022 – Febrero 2026"
         description: |
-          Brindé soporte en sitio a más de 10 usuarios del departamento de TI de
-          una compañía del sector agrícola, documentando procesos y apoyando
-          proyectos de la PMO.
+          Fungí como administrador de proyectos y coordinador de demanda de TI
+          para la cuenta de icorp en una empresa agrícola dedicada al jitomate —
+          brindando soporte a más de 10 usuarios, documentando procesos y
+          entregando proyectos de la PMO.
         highlights:
           - Cumplí el KPI anual de 35–50 service requests resueltos (cambios menores y funcionalidades pequeñas)
           - Implementé Hybo, plataforma de gestión de espacios de trabajo híbridos, en oficinas centrales — proyecto entregado con éxito
@@ -280,7 +286,7 @@ content:
           - Documenté cerca de 5 procedimientos y procesos clave de TI
 
       - company: "CONAFOR®"
-        role: "Documentador técnico"
+        role: "Líder en pre-proyectos de contratación de TIC"
         period: "Mayo 2019 – Mayo 2022"
         description: |
           Gestioné el paso previo a la contratación de TIC — cartera POTIC y
@@ -303,16 +309,17 @@ content:
           - Resolución de problemas en MySQL y SQL Server
 
       - company: "Netwarmonitor®"
-        role: "Consultor"
+        role: "Coordinador de proyectos y consultor"
         period: "Enero 2017 – Junio 2018"
         description: |
-          Capacité e implementé software administrativo (punto de venta) a
-          clientes, y coordiné la entrega de beneficios gubernamentales del
-          INADEM.
+          Capacité e implementé software de punto de venta a clientes, y
+          gestioné entregas de beneficios gubernamentales del INADEM de
+          principio a fin — desde la lista de beneficiarios hasta la
+          distribución.
         highlights:
           - Capacité e implementé el punto de venta a más de 50 clientes, en remoto (AnyDesk) y en sitio
-          - Coordiné 2 entregas de equipo a más de 100 beneficiarios, con recepción de su documentación
-          - Mesa de ayuda con Mantis BT y Freshdesk
+          - Gestioné entregas de beneficios INADEM de principio a fin — desde la lista de beneficiarios hasta 2 entregas de equipo a más de 100 personas, con recepción de su documentación
+          - Mesa de ayuda (Mantis BT y Freshdesk) y soporte a las aplicaciones digitales de la empresa
           - Testing funcional y pruebas de aceptación
 
       - company: "CONTPAQi®"
